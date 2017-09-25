@@ -4,7 +4,8 @@ author: Brian Richards
 slug: about
 categories: []
 tags: []
-Comments: FALSE
+comments: FALSE
+share: FALSE
 ---
 
 The About
