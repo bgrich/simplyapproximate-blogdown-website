@@ -1,0 +1,11 @@
+---
+title: About
+author: Brian Richards
+slug: about
+categories: []
+tags: []
+comments: FALSE
+share: FALSE
+---
+
+The About
