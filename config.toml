@@ -11,7 +11,7 @@ Paginate = 5
 	[params.author]
 		name = "HPSTR"
 		avatar = "/images/avatar.jpg"
-		bio = "An elegant, responsive theme for Hugo"
+		bio = "Thoughts on Physics, Data Science, Games, Books, Dance, and Culture"
 		github = "dldx/hpstr-hugo-theme"
 	[params.image]
 	  feature = "/images/abstract-1.jpg"
