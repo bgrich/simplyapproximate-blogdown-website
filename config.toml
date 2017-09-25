@@ -1,4 +1,4 @@
-baseurl = ""
+baseurl = "http://www.simplyapproximate.com/"
 languageCode = "en-gb"
 title = "Simply Approximate"
 theme = "hpstr-hugo-theme"
