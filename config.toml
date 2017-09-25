@@ -9,10 +9,10 @@ Paginate = 5
 [params]
 	subtitle = "Thoughts on Physics, Data Science, Games, Books, Dance, and Culture"
 	[params.author]
-		name = "HPSTR"
+		name = "Brian Richards"
 		avatar = "/images/avatar.jpg"
 		bio = "Thoughts on Physics, Data Science, Games, Books, Dance, and Culture"
-		github = "dldx/hpstr-hugo-theme"
+		github = "bgrich/simplyapproximate-blogdown-website"
 	[params.image]
 	  feature = "/images/abstract-1.jpg"
 	  credit = "dargadgetz"
