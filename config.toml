@@ -1,5 +1,5 @@
 baseurl = "http://www.simplyapproximate.com/"
-languageCode = "en-gb"
+languageCode = "en-us"
 title = "Simply Approximate"
 theme = "hpstr-hugo-theme"
 pluralizelisttitles = false
