@@ -1,0 +1,11 @@
+---
+title: Re-launching with Blogdown
+author: Brian Richards
+date: '2017-10-02'
+slug: re-launching-with-blogdown
+categories: []
+tags:
+  - R
+draft: yes
+---
+
