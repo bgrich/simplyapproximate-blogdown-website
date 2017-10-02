@@ -13,7 +13,7 @@ Paginate = 5
 		avatar = "/images/avatar.jpg"
 		bio = "Thoughts on Physics, Data Science, Games, Books, Dance, and Culture"
 		github = "bgrich/simplyapproximate-blogdown-website"
-	[params.image]
-	  feature = "/images/abstract-1.jpg"
-	  credit = "dargadgetz"
-	  creditlink = "http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/"
+#	[params.image]
+#	  feature = "/images/abstract-1.jpg"
+#	  credit = "dargadgetz"
+#	  creditlink = "http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/"
