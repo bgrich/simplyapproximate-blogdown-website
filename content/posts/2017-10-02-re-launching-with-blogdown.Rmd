@@ -7,6 +7,8 @@ categories: []
 tags:
   - R
 draft: no
+comments: FALSE
+share: FALSE
 ---
 
 Welcome to the latest version of Simply Approximate! Over the the last few 
