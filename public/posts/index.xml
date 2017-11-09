@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Simply Approximate</title>
-    <link>/posts/</link>
+    <link>http://www.simplyapproximate.com/posts/</link>
     <description>Recent content in Posts on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.simplyapproximate.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Re-launching with Blogdown</title>
-      <link>/posts/re-launching-with-blogdown/</link>
+      <link>http://www.simplyapproximate.com/posts/re-launching-with-blogdown/</link>
       <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/re-launching-with-blogdown/</guid>
+      <guid>http://www.simplyapproximate.com/posts/re-launching-with-blogdown/</guid>
       <description>Welcome to the latest version of Simply Approximate! Over the the last few years I’ve had grand plans to make use of this site. Alas, work and other concerns have prevented me from posting anything and getting this blog off the ground. But now is the time! To give the blog a fresh start, I’ve decided to re-build the site and re-launch it using Blogdown.
 Blogdown is package for R created by Yihui Xie that allows for the creation and maintain of a website inside of R Studio.</description>
     </item>
