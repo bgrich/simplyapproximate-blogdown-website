@@ -5,6 +5,7 @@ theme = "hpstr-hugo-theme"
 pluralizelisttitles = false
 PygmentsCodeFences = true
 Paginate = 5
+googleAnalytics = "UA-109450627-1"
 
 [params]
 	subtitle = "Thoughts on Physics, Data Science, Games, Books, Dance, and Culture"
