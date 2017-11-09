@@ -6,7 +6,7 @@ slug: re-launching-with-blogdown
 categories: []
 tags:
   - R
-draft: yes
+draft: no
 ---
 
 Welcome to the latest version of Simply Approximate! Over the the last few 
