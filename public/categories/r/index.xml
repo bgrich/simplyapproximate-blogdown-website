@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Simply Approximate</title>
-    <link>/categories/r/</link>
+    <link>http://www.simplyapproximate.com/categories/r/</link>
     <description>Recent content in R on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.simplyapproximate.com/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DataCamp R Courses</title>
-      <link>/posts/datacamp-r-courses/</link>
+      <link>http://www.simplyapproximate.com/posts/datacamp-r-courses/</link>
       <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/datacamp-r-courses/</guid>
+      <guid>http://www.simplyapproximate.com/posts/datacamp-r-courses/</guid>
       <description>Back in September I finished the Data Scientist (with R) career path from DataCamp. This career path is a series of 23 online courses that start with a general introduction to R, introduce the important functions and packages for modern R usage, and give a sampling of machine learning techniques. Along the way, these courses introduce data analysis concepts that go beyond the specifics of how to code in R.</description>
     </item>
     

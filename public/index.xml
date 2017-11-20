@@ -6,10 +6,19 @@
     <description>Recent content on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.simplyapproximate.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DataCamp R Courses</title>
+      <link>http://www.simplyapproximate.com/posts/datacamp-r-courses/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/datacamp-r-courses/</guid>
+      <description>Back in September I finished the Data Scientist (with R) career path from DataCamp. This career path is a series of 23 online courses that start with a general introduction to R, introduce the important functions and packages for modern R usage, and give a sampling of machine learning techniques. Along the way, these courses introduce data analysis concepts that go beyond the specifics of how to code in R.</description>
+    </item>
     
     <item>
       <title>Re-launching with Blogdown</title>

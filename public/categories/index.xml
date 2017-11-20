@@ -10,5 +10,14 @@
 	<atom:link href="http://www.simplyapproximate.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>R</title>
+      <link>http://www.simplyapproximate.com/categories/r/</link>
+      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/categories/r/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
