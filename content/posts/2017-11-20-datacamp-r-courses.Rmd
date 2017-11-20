@@ -1,0 +1,42 @@
+---
+title: DataCamp R Courses
+author: Brian Richards
+date: '2017-11-20'
+slug: datacamp-r-courses
+categories:
+  - R
+tags:
+  - R
+draft: yes
+comments: false
+share: false
+---
+
+Back in September I finished the Data Scientist (with R) career path from 
+DataCamp. This career path is a series of 23 online courses that start with a 
+general introduction to R, introduce the important functions and packages for 
+modern R usage, and give a sampling of machine learning techniques. Along the 
+way, these courses introduce data analysis concepts that go beyond the specifics 
+of how to code in R.
+
+I found the courses to be a mix of review and new material, however my 8 years 
+of experience with R made the review portion of that inevitable. That being 
+said, I almost always learned of some quirk in R or a new way of doing 
+something that was simpler than the hack I'd been using for years. For someone 
+new to R, these courses will be helpful in getting used to the quirks of R 
+without having to bang your head against the wall too often. 
+
+After initially completing the courses I thought that they were interesting, 
+but that their main use would be giving me brief introductions to topics for 
+further study. In general, I've found that to be a pretty accurate assessment 
+over the last few months. For example, while these courses gave me an 
+introduction to the `purrr` package, it was only after reading through the 
+package's documentation and doing some tests of it myself that I was able to 
+start to get a good grasp on the package. That being said, one of the more 
+useful parts of the classes has been the ability to go back and review the 
+material from the classes at a later date. While I may think I understood one of 
+the topics, getting a chance to review it with a fresh problem in mind has been 
+incredibly helpful.
+
+Overall, I found the DataCamp courses to be pretty useful. Hopefully my time 
+with them will continue to pay off in the coming months.
