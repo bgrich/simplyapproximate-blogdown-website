@@ -7,7 +7,7 @@ categories:
   - R
 tags:
   - R
-draft: yes
+draft: no
 comments: false
 share: false
 ---
