@@ -9,7 +9,7 @@ categories:
 tags:
   - R
   - Data Science
-draft: yes
+draft: no
 comments: false
 share: false
 ---
@@ -17,7 +17,7 @@ share: false
 Recently, I came across a blog post by Tony Hirst on 
 [computational essays and how they can be used to facilitate learning](https://blog.ouseful.info/2017/11/15/programming-meh-lets-teach-how-to-write-computational-essays-instead/). 
 Hirst was reflecting on an earlier blog post by Stephen Wolfram on 
-[what a computational essay is](http://blog.stephenwolfram.com/2017/11/what-is-a-computational-essay/). 
+[what defines a computational essay](http://blog.stephenwolfram.com/2017/11/what-is-a-computational-essay/). 
 Computational essays are, as paraphrased from Hirst and Wolfram, a mixture of 
 plain language, computer input, and computer output allowing the user to 
 interweave narrative with code and the output from that code.  
