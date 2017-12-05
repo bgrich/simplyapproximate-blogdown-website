@@ -1,0 +1,16 @@
+---
+title: How I Started Using Computational Essays on Accident
+author: Brian Richards
+date: '2017-12-05'
+slug: how-i-started-using-computational-essays-on-accident
+categories:
+  - R
+  - Data Science
+tags:
+  - R
+  - Data Science
+draft: yes
+comments: false
+share: false
+---
+
