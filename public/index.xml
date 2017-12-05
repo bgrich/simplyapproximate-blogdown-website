@@ -6,10 +6,19 @@
     <description>Recent content on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.simplyapproximate.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How I Started Using Computational Essays on Accident</title>
+      <link>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</link>
+      <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</guid>
+      <description>Recently, I came across a blog post by Tony Hirst on computational essays and how they can be used to facilitate learning. Hirst was reflecting on an earlier blog post by Stephen Wolfram on what defines a computational essay. Computational essays are, as paraphrased from Hirst and Wolfram, a mixture of plain language, computer input, and computer output allowing the user to interweave narrative with code and the output from that code.</description>
+    </item>
     
     <item>
       <title>DataCamp R Courses</title>
