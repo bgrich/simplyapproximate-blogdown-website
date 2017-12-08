@@ -271,7 +271,7 @@ comparison <- old_payment_calculation %>%
 
 ```
 
-First, let's take a look at the precentage of amount paid to the creator as 
+First, let's take a look at the percentage of amount paid to the creator as 
 a function of amount pledged for both systems.
 
 ```{r, echo = FALSE}
@@ -335,7 +335,7 @@ got charged immediately and then were charged shortly after when the first of
 the month rolled around. To fix this problem, Patreon decided to switch to a 
 new subscription system that removed the possibility to aggregate fees because 
 every pledge would now be a separate subscription with its own transaction that 
-occured monthly depending on when you initially pledged. So if you pledged to 
+occurred monthly depending on when you initially pledged. So if you pledged to 
 four different creators, you now have four different transactions instead of 
 all of the transactions being aggregated into one.
 
@@ -348,7 +348,7 @@ In Patreon's own words:
 
 For me, the part where they have gone wrong on this is that Patreon isn't like 
 any other subscription service. It is an opportunity for creators to get direct 
-help from their fans and make use of large fanbases that might not be able to 
+help from their fans and make use of large fan bases that might not be able to 
 pay large amounts of money. By aggregating the transaction fees, they are able 
 to help get more money into the pockets of the creators.
 
