@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.simplyapproximate.com/posts/explaining-patreon-s-subscription-changes/</loc>
+    <lastmod>2017-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</loc>
     <lastmod>2017-12-05T00:00:00+00:00</lastmod>
   </url>
@@ -40,7 +45,7 @@
   
   <url>
     <loc>http://www.simplyapproximate.com/posts/</loc>
-    <lastmod>2017-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -57,8 +62,20 @@
   </url>
   
   <url>
+    <loc>http://www.simplyapproximate.com/tags/random-ramblings/</loc>
+    <lastmod>2017-12-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.simplyapproximate.com/categories/random-ramblings/</loc>
+    <lastmod>2017-12-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.simplyapproximate.com/</loc>
-    <lastmod>2017-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

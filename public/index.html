@@ -28,7 +28,7 @@
 
 
 
-  <meta property="og:updated_time" content="2017-12-05T00:00:00&#43;00:00"/>
+  <meta property="og:updated_time" content="2017-12-08T00:00:00&#43;00:00"/>
 
 
 
@@ -118,6 +118,114 @@
 </div>
 
 <div id="main" role="main">
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+         
+		<span class="entry-date date published updated"><time datetime="2017-12-08 00:00:00 &#43;0000 UTC"><a href="/posts/explaining-patreon-s-subscription-changes/">Dec 8, 2017</a></time></span>
+        
+      
+    </div>
+    
+	<h1 class="entry-title"><a href="/posts/explaining-patreon-s-subscription-changes/" rel="bookmark" title="Explaining Patreon&#39;s Subscription Changes" itemprop="url">Explaining Patreon&#39;s Subscription Changes</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>On December 8th, 2017, I noticed that my Twitter feed was blowing up about the <a href="https://blog.patreon.com/updating-patreons-fee-structure/">new changes coming to Patreon</a>. The big change that has people nervous is that starting in late December, Patreon patrons would have to start paying for credit card service fees. This is a change over the previous system where all fees were taken out of the amount the creator received directly. While overall a switch to charging the patrons the transaction fees doesn’t seem like a huge change, the deeper change of interest (to me) is the disaggregation of the transaction fees.</p>
+<p>The trait that made Patreon different from other services was that you could aggregate the transaction fees. With any credit card transaction, there is typically a fee of some percentage of the charge plus a standard cost. For Patreon, this was a 1.9% + $0.30 fee that was subtracted from the money sent to the creators. This was done once a month for all of your pledges, so if you pledge to a number of different creators the transaction fee would be spread across them. Under the new system, Patreon is going to charge a 2.9% + $0.35 on top of each pledge made. This means that a person that pledges $1 to 10 different creators is going to be paying a $3.79 transaction fee where previously that fee was $0.64.</p>
+<p>There are a few major concerns in the community regarding this. Some of the main ones being that many creators make their money from small pledges and the additional service fee might make those patrons leave. Some patrons may only have so much they can spend on Patreon per month, so those patrons may drop some of their small pledges or leave the platform entirely.</p>
+<p>When I first read about this, I didn’t realize that they were going to disaggregate the pledge payments. But then I saw this Twitter post from @FoldableHuman that included a picture from the updated Patreon blog post about the changes:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The *weirdest* moment is when they put this image up and say &quot;look at how simple this will be in the future!&quot;<br><br>I&#39;m sorry, but tracking anywhere from 3 to 15 billing cycles isn&#39;t a simplification. <a href="https://t.co/WjVv9HsLPc">pic.twitter.com/WjVv9HsLPc</a></p>&mdash; Dan &quot;fascism is a loser ideology&quot; Olson (@FoldableHuman) <a href="https://twitter.com/FoldableHuman/status/939007425188847616?ref_src=twsrc%5Etfw">December 8, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>That image was my first hint that Patreon was disaggregating the transaction fee in addition to having the patrons pay for it. I also saw a nice figure by @DarwinAwdWinner showing how much of what the patron is paying for a $1 pledge goes to the transaction fee, the Patreon cut, and the creator cut:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here&#39;s the percentage breakdown for a $1 pledge: <a href="https://t.co/plKJHZ6Rdj">pic.twitter.com/plKJHZ6Rdj</a></p>&mdash; Ryan Thompson (@DarwinAwdWinner) <a href="https://twitter.com/DarwinAwdWinner/status/938837508552400896?ref_src=twsrc%5Etfw">December 7, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>These two figure got me thinking. What are these changes doing to the power of each dollar I spend on the service?</p>
+<p><em>Note that in the following section I will be talking about the percentage of the total money paid by the patron that is given to the creator</em></p>
+<div id="leveraging-patrons-money" class="section level2">
+<h2>Leveraging Patron’s Money</h2>
+<p>After reading about the changes in Patreon’s subscription and fee structure, the following question came to me:</p>
+<blockquote>
+<p>Is the power of my money spent being reduced by the loss of fee aggregation?</p>
+</blockquote>
+<p>To figure that out, let’s do a calculation. For simplicity, I am going to only use the current Patreon fee of 5% and the current Stripe payment processing fee of 1.9% + $0.30 per transaction as that is most similar to the new proposed fee structure.</p>
+<p>Under the old structure, Patreon would aggregate the fees for pledge transactions. What this means is that at the first of each month, they would charge your credit card only once for all of your pledges, subtract off the transaction fee, and then divide the remaining amount among the creators you pledged to (after taking their 5% cut).</p>
+<p>Under the new system, Patreon removes the aggregation of fees and will charge your credit card for each pledge. This means that each pledge will feel the full brunt of the new transaction fee (2.9% + $0.35).</p>
+<p>To understand how this affects the patron, we will look at a simplified example.</p>
+<div id="old-system" class="section level3">
+<h3>Old System</h3>
+<p>Let us assume that the patron gives the same amount to each creator. For the old payment system, we could model it something like this.</p>
+<pre class="r"><code>old_payment &lt;- function(pledge_amount, number_supported) {
+  stripe_fee &lt;- pledge_amount * number_supported * 0.019 + 0.3
+  patreon_cut &lt;- pledge_amount * 0.05
+  
+  breakdown &lt;- tibble(old_stripe_creator_cut = pledge_amount - stripe_fee / number_supported - patreon_cut, 
+                    old_stripe_patron_paid = pledge_amount, 
+                    old_stripe_creator_percent = (pledge_amount - stripe_fee / number_supported - patreon_cut) / pledge_amount * 100)  
+}</code></pre>
+<p>Here we say that the user pledges some amount to n creators. We can break down the amount the user pays and the amount the creator makes as follows:</p>
+<ul>
+<li>The cut the creator made (after fees and Patreon cut)</li>
+<li>The amount the patron paid</li>
+<li>The percentage of money the creator gets from what the patron paid</li>
+</ul>
+<p>This last breakdown is the most important for me as it gives a hint to how much of the money the patron spends is actually going to the creator. Now, let’s calculate the breakdown over a range of pledges from $1 to $20 and a range of creators supported from 1 to 20.</p>
+<p>We can plot the percentage of the patrons money that the creators will take home. First we will look at the percentage taken home as a function of the amount pledged. This plot is color coded for the number of creators supported.</p>
+<p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Here we see that the percentage that the creator takes home compared to what the patron actually paid increases with increases in the amount pledged. Additionally, as the number of creators supported increases, the percentage of low pledge amounts taken home drastically increases.</p>
+<p>We can compare that to a plot of the percentage taken home by the creator as a function of the number of creators supported with color showing the amount of money pledged.</p>
+<p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Again, we see a similar trend of increased percentages for more creators being supported.</p>
+</div>
+<div id="new-system" class="section level3">
+<h3>New System</h3>
+<p>Now, we want to calculate the same break down, but for the new system of subscriptions and transactions. A key note here, the amount pledged by the patron and the amount actually paid by the patron will be different. Under the new system, Patreon will add a 2.9% + $0.35 service fee onto every pledge and the pledges will be transacted separately.</p>
+<pre class="r"><code>new_payment &lt;- function(pledge_amount, number_supported) {
+  transaction_fee &lt;- pledge_amount * 0.029 + 0.35
+  patreon_cut &lt;- pledge_amount * 0.05
+  
+  breakdown &lt;- tibble(new_creator_cut = pledge_amount - patreon_cut, 
+                    new_patron_paid = pledge_amount + transaction_fee, 
+                    new_creator_percent = (pledge_amount - patreon_cut) / new_patron_paid * 100)  
+}</code></pre>
+<p>As with the old system of payment, let’s calculate the breakdown over a range of pledges from $1 to $20 and a range of creators supported from 1 to 20.</p>
+<p>We can recreate the figures above using the new calculation. First we will look at the percentage taken home as a function of the amount pledged. This plot is color coded for the number of creators supported.</p>
+<p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Here we see that the percentage that the creator takes home compared to what the patron actually paid increases with increases in the amount pledged, just as in the old case. However, the number of creators supported is no longer coupled to the service fee. This means that there is no link between the percentage of amount paid by the patron that the creator takes home and the number of creators supported. This is seen here by all of the different color lines for the number of creators supported overlapping. The lines themselves were jittered so that the overlap would be clear.</p>
+<p>This becomes even clearer when we look at the percentage of amount paid by the patron as a function of the number of creators supported.</p>
+<p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Now we have a flat line for each level. Disaggregating the user payments means that increasing the number of creators supported makes no change in the percent that creators take home from what the patrons pay.</p>
+</div>
+<div id="comparison" class="section level3">
+<h3>Comparison</h3>
+<p>Let’s put these side by side for easier comparison.</p>
+<p>First, let’s take a look at the percentage of amount paid to the creator as a function of amount pledged for both systems.</p>
+<p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Here it is clear that no matter how many creators you support under the new system, you still get a percentage very close to only supporting a single creator under the old system.</p>
+<p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>The story is similar here when looking as a function of the number of creators supported. Your money as a patron goes further for the creators the more creators you support under the old system. Under the new system, more of your money is going into fees if you support multiple creators with small pledges.</p>
+<p>Let me say that again. <strong>Under the new system, more of the patron’s money goes into fees if you support multiple creators with small pledges.</strong></p>
+<p>Of course, my scenario above is a generalization. There are likely not patrons pledging the same value to all creators. Some are probably pledging more to some creators than others. However, any aggregation of the transaction fees is a benefit to the creators and the patrons both.</p>
+</div>
+</div>
+<div id="a-note-on-patreons-reasoning" class="section level2">
+<h2>A Note on Patreon’s Reasoning</h2>
+<p>In reading through their blog post, I understand why Patreon made the decision that they did. Their decision stems from a desire to allow creators to require patrons to pay first before being able to access their rewards. But this apparently led to a problem of perceived double booking, where patrons got charged immediately and then were charged shortly after when the first of the month rolled around. To fix this problem, Patreon decided to switch to a new subscription system that removed the possibility to aggregate fees because every pledge would now be a separate subscription with its own transaction that occurred monthly depending on when you initially pledged. So if you pledged to four different creators, you now have four different transactions instead of all of the transactions being aggregated into one.</p>
+<p>In Patreon’s own words:</p>
+<blockquote>
+<p>“…we need to move our payments system to treat your pledges like <em>any other subscription</em> service. In other words, we need a system that charges patrons at the time of their initial pledge, and on the anniversary of their pledge each month thereafter.”</p>
+</blockquote>
+<p>For me, the part where they have gone wrong on this is that Patreon isn’t like any other subscription service. It is an opportunity for creators to get direct help from their fans and make use of large fan bases that might not be able to pay large amounts of money. By aggregating the transaction fees, they are able to help get more money into the pockets of the creators.</p>
+<p>Patreon claims that they are doing this with intention of getting the most money for creators. I think that is a goal that everyone can agree on. But for me, my goal is to get as much money as I can directly to the creators. Small pledges are hard to make work because of the flat fee attached to transaction fees. By aggregating the transactions, Patreon helped make these work for creators. Under the new system, they aren’t encouraging me to seek out new creators to back. Doing so only hits me with more fees and doesn’t help the rest of the creators that I support.</p>
+<p>I plan on continuing to support the creators that I already follow and I hope that these changes won’t hurt them too much. And who knows, this sounds like a great opportunity for a competitor to make a name for itself in the niche that Patreon has had a pretty strong hold of for several years.</p>
+</div>
+
+  </div>
+</article>
 
 <article class="hentry">
   <header>

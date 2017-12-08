@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Random Ramblings on Simply Approximate</title>
+    <link>http://www.simplyapproximate.com/tags/random-ramblings/</link>
+    <description>Recent content in Random Ramblings on Simply Approximate</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.simplyapproximate.com/tags/random-ramblings/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Explaining Patreon&#39;s Subscription Changes</title>
+      <link>http://www.simplyapproximate.com/posts/explaining-patreon-s-subscription-changes/</link>
+      <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/explaining-patreon-s-subscription-changes/</guid>
+      <description>On December 8th, 2017, I noticed that my Twitter feed was blowing up about the new changes coming to Patreon. The big change that has people nervous is that starting in late December, Patreon patrons would have to start paying for credit card service fees. This is a change over the previous system where all fees were taken out of the amount the creator received directly. While overall a switch to charging the patrons the transaction fees doesn’t seem like a huge change, the deeper change of interest (to me) is the disaggregation of the transaction fees.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,371 @@
+---
+title: Explaining Patreon's Subscription Changes
+author: Brian Richards
+date: '2017-12-08'
+slug: explaining-patreon-s-subscription-changes
+categories: 
+  - Random Ramblings
+tags: 
+  - Random Ramblings
+draft: no
+comments: false
+share: false
+---
+
+On December 8th, 2017, I noticed that my Twitter feed was blowing up about 
+the [new changes coming to Patreon](https://blog.patreon.com/updating-patreons-fee-structure/). 
+The big change that has people nervous is that starting in late December, 
+Patreon patrons would have to start paying for credit card service fees. This 
+is a change over the previous system where all fees were taken out of the 
+amount the creator received directly. 
+While overall a switch to charging the patrons the transaction fees doesn't 
+seem like a huge change, the deeper change of interest (to me) is the 
+disaggregation of the transaction fees.
+
+The trait that made Patreon different from other services was that you could 
+aggregate the transaction fees. With any credit card transaction, there is 
+typically a fee of some percentage of the charge plus a standard cost. For 
+Patreon, this was a 1.9% + \$0.30 fee that was subtracted from the money sent 
+to the creators. This was done once a month for all of your pledges, so if you 
+pledge to a number of different creators the transaction fee would be spread 
+across them. Under the new system, Patreon is going to charge a 2.9% + 
+\$0.35 on top of each pledge made. This means that a person that pledges \$1 
+to 10 different creators is going to be paying a \$3.79 transaction fee where 
+previously that fee was \$0.64. 
+
+There are a few major concerns in the community regarding this. Some of the 
+main ones being that many creators make their money from small pledges and 
+the additional service fee might make those patrons leave. Some patrons may 
+only have so much they can spend on Patreon per month, so those patrons may 
+drop some of their small pledges or leave the platform entirely. 
+
+When I first read about this, I didn't realize that they were going to 
+disaggregate the pledge payments. But then I saw this Twitter post from 
+\@FoldableHuman that included a picture from the updated Patreon blog post 
+about the changes: 
+
+```{r, echo = FALSE}
+blogdown::shortcode('tweet', '939007425188847616')
+```
+
+That image was my first hint that Patreon was disaggregating the transaction 
+fee in addition to having the patrons pay for it. I also saw a nice figure 
+by \@DarwinAwdWinner showing how much of what the patron is paying for a 
+\$1 pledge goes to the transaction fee, the Patreon cut, and the creator cut:
+
+```{r, echo = FALSE}
+blogdown::shortcode('tweet', '938837508552400896')
+```
+
+These two figure got me thinking. What are these changes doing to the power of 
+each dollar I spend on the service?
+
+*Note that in the following section I will be talking about the percentage of 
+the total money paid by the patron that is given to the creator*
+
+## Leveraging Patron's Money
+
+```{r, echo = FALSE, message = FALSE}
+library(tidyverse)
+```
+
+After reading about the changes in Patreon's subscription and fee structure, 
+the following question came to me: 
+
+> Is the power of my money spent being reduced by the loss of fee aggregation?
+
+To figure that out, let's do a calculation. For simplicity, I am going to 
+only use the current Patreon fee of 5% and the current Stripe payment processing 
+fee of 1.9% + $0.30 per transaction as that is most similar to the new proposed 
+fee structure.
+
+Under the old structure, Patreon would aggregate the fees for pledge 
+transactions. What this means is that at the first of each month, they would 
+charge your credit card only once for all of your pledges, subtract off the 
+transaction fee, and then divide the remaining amount among the creators you 
+pledged to (after taking their 5% cut). 
+
+Under the new system, Patreon removes the aggregation of fees and will charge 
+your credit card for each pledge. This means that each pledge will feel the 
+full brunt of the new transaction fee (2.9% + $0.35). 
+
+To understand how this affects the patron, we will look at a simplified 
+example.
+
+### Old System
+
+Let us assume that the patron gives the same amount to each 
+creator. For the old payment system, we could model it something like this. 
+
+```{r}
+old_payment <- function(pledge_amount, number_supported) {
+  stripe_fee <- pledge_amount * number_supported * 0.019 + 0.3
+  patreon_cut <- pledge_amount * 0.05
+  
+  breakdown <- tibble(old_stripe_creator_cut = pledge_amount - stripe_fee / number_supported - patreon_cut, 
+                    old_stripe_patron_paid = pledge_amount, 
+                    old_stripe_creator_percent = (pledge_amount - stripe_fee / number_supported - patreon_cut) / pledge_amount * 100)  
+}
+```
+
+Here we say that the user pledges some amount to n creators. We can break down 
+the amount the user pays and the amount the creator makes as follows: 
+
+* The cut the creator made (after fees and Patreon cut) 
+* The amount the patron paid 
+* The percentage of money the creator gets from what the patron paid
+
+This last breakdown is the most important for me as it gives a hint to how much 
+of the money the patron spends is actually going to the creator. Now, let's 
+calculate the breakdown over a range of pledges from \$1 to \$20 and a range 
+of creators supported from 1 to 20.
+
+```{r, echo = FALSE}
+old_payment_calculation <- tibble(pledge = c(1:20)) %>% 
+  mutate(list(tibble(creators = c(1:20)))) %>% 
+  unnest() %>% 
+  group_by(pledge, creators) %>% 
+  mutate(list(old_payment(pledge, creators))) %>% 
+  unnest() %>% 
+  ungroup()
+```
+
+We can plot the percentage of the patrons money that the creators will take 
+home. First we will look at the percentage taken home as a function of the 
+amount pledged. This plot is color coded for the number of creators supported.
+
+```{r, echo = FALSE}
+old_payment_calculation %>% 
+  filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = pledge, 
+             y = old_stripe_creator_percent, 
+             color = as.factor(creators))) + 
+  geom_line(size = 1) +
+  geom_point() + 
+  theme_bw() + 
+  labs(x = "Amount Pledged (USD)", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Number of\nCreators\nSupported") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Here we see that the percentage that the creator takes home compared to what 
+the patron actually paid increases with increases in the amount pledged. 
+Additionally, as the number of creators supported increases, the percentage 
+of low pledge amounts taken home drastically increases. 
+
+We can compare that to a plot of the percentage taken home by the creator as 
+a function of the number of creators supported with color showing the 
+amount of money pledged.
+
+```{r, echo = FALSE}
+old_payment_calculation %>% 
+  filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = creators, 
+             y = old_stripe_creator_percent, 
+             color = as.factor(pledge))) + 
+  geom_line(size = 1) +
+  geom_point() +
+  theme_bw() + 
+  labs(x = "Number of Creators Supported", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Amount Pledged\n(USD)") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Again, we see a similar trend of increased percentages for more creators being 
+supported.
+
+### New System
+
+Now, we want to calculate the same break down, but for the new system of 
+subscriptions and transactions. A key note here, the amount pledged by the 
+patron and the amount actually paid by the patron will be different. Under the 
+new system, Patreon will add a 2.9% + $0.35 service fee onto every pledge and 
+the pledges will be transacted separately.
+
+```{r}
+new_payment <- function(pledge_amount, number_supported) {
+  transaction_fee <- pledge_amount * 0.029 + 0.35
+  patreon_cut <- pledge_amount * 0.05
+  
+  breakdown <- tibble(new_creator_cut = pledge_amount - patreon_cut, 
+                    new_patron_paid = pledge_amount + transaction_fee, 
+                    new_creator_percent = (pledge_amount - patreon_cut) / new_patron_paid * 100)  
+}
+```
+
+As with the old system of payment, let's calculate the breakdown over a range 
+of pledges from \$1 to \$20 and a range of creators supported from 1 to 20.
+
+```{r, echo = FALSE}
+new_payment_calculation <- tibble(pledge = c(1:20)) %>% 
+  mutate(list(tibble(creators = c(1:20)))) %>% 
+  unnest() %>% 
+  group_by(pledge, creators) %>% 
+  mutate(list(new_payment(pledge, creators))) %>% 
+  unnest() %>% 
+  ungroup()
+```
+
+We can recreate the figures above using the new calculation.
+First we will look at the percentage taken home as a function of the 
+amount pledged. This plot is color coded for the number of creators supported.
+
+```{r, echo = FALSE}
+new_payment_calculation %>% 
+  filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = pledge, 
+             y = new_creator_percent, 
+             color = as.factor(creators))) + 
+  geom_line(size = 1, position = "jitter") +
+  theme_bw() + 
+  labs(x = "Amount Pledged (USD)", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Number of\nCreators\nSupported") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Here we see that the percentage that the creator takes home compared to what 
+the patron actually paid increases with increases in the amount pledged, just 
+as in the old case. However, the number of creators supported is no longer 
+coupled to the service fee. This means that there is no link between the 
+percentage of amount paid by the patron that the creator takes home and the 
+number of creators supported. This is seen here by all of the different color 
+lines for the number of creators supported overlapping. The lines themselves 
+were jittered so that the overlap would be clear.
+
+This becomes even clearer when we look at the percentage of amount paid by the 
+patron as a function of the number of creators supported.
+
+```{r, echo = FALSE}
+new_payment_calculation %>% 
+  filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = creators, 
+             y = new_creator_percent, 
+             color = as.factor(pledge))) + 
+  geom_line(size = 1) +
+  theme_bw() + 
+  labs(x = "Number of Creators Supported", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Amount Pledged\n(USD)") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Now we have a flat line for each level. Disaggregating the user payments means 
+that increasing the number of creators supported makes no change in the percent 
+that creators take home from what the patrons pay.
+
+### Comparison
+
+Let's put these side by side for easier comparison.
+
+```{r, echo = FALSE}
+comparison <- old_payment_calculation %>% 
+  left_join(new_payment_calculation, 
+            by = c("pledge", "creators")) %>% 
+  gather(system, creator_percent, old_stripe_creator_percent, new_creator_percent) %>% 
+  mutate(system = factor(system, levels = c("old_stripe_creator_percent", "new_creator_percent"), labels = c("Old", "New")))
+
+```
+
+First, let's take a look at the percentage of amount paid to the creator as 
+a function of amount pledged for both systems.
+
+```{r, echo = FALSE}
+comparison %>% 
+  filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = pledge, 
+             y = creator_percent, 
+             color = as.factor(creators))) + 
+  geom_line(size = 1) +
+  geom_point() +
+  facet_grid(. ~ system) +
+  theme_bw() + 
+  labs(x = "Amount Pledged (USD)", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Number of\nCreators\nSupported") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Here it is clear that no matter how many creators you support under the new 
+system, you still get a percentage very close to only supporting a single 
+creator under the old system.
+
+```{r, echo = FALSE}
+comparison %>% 
+  filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = creators, 
+             y = creator_percent, 
+             color = as.factor(pledge))) + 
+  geom_line(size = 1) +
+  geom_point() +
+  facet_grid(. ~ system) +
+  theme_bw() + 
+  labs(x = "Number of Creators Supported", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Amount Pledged\n(USD)") +
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+The story is similar here when looking as a function of the number of creators 
+supported. Your money as a patron goes further for the creators the more 
+creators you support under the old system. Under the new system, more of your 
+money is going into fees if you support multiple creators with small pledges. 
+
+Let me say that again. **Under the new system, more of the patron's money 
+goes into fees if you support multiple creators with small pledges.**
+
+Of course, my scenario above is a generalization. There are likely not patrons 
+pledging the same value to all creators. Some are probably pledging more to 
+some creators than others. However, any aggregation of the transaction fees 
+is a benefit to the creators and the patrons both.
+
+## A Note on Patreon's Reasoning
+
+In reading through their blog post, I understand why Patreon made the 
+decision that they did. Their decision stems from a desire to allow creators to 
+require patrons to pay first before being able to access their rewards. But 
+this apparently led to a problem of perceived double booking, where patrons 
+got charged immediately and then were charged shortly after when the first of 
+the month rolled around. To fix this problem, Patreon decided to switch to a 
+new subscription system that removed the possibility to aggregate fees because 
+every pledge would now be a separate subscription with its own transaction that 
+occurred monthly depending on when you initially pledged. So if you pledged to 
+four different creators, you now have four different transactions instead of 
+all of the transactions being aggregated into one.
+
+In Patreon's own words: 
+
+> "...we need to move our payments system to treat your pledges like *any other 
+> subscription* service. In other words, we need a system that charges patrons at 
+> the time of their initial pledge, and on the anniversary of their pledge each 
+> month thereafter."
+
+For me, the part where they have gone wrong on this is that Patreon isn't like 
+any other subscription service. It is an opportunity for creators to get direct 
+help from their fans and make use of large fan bases that might not be able to 
+pay large amounts of money. By aggregating the transaction fees, they are able 
+to help get more money into the pockets of the creators.
+
+Patreon claims that they are doing this with intention of getting the most 
+money for creators. I think that is a goal that everyone can agree on. But for 
+me, my goal is to get as much money as I can directly to the creators. Small 
+pledges are hard to make work because of the flat fee attached to transaction 
+fees. 
+By aggregating the transactions, Patreon helped make these work for creators. 
+Under the new system, they aren't encouraging me to seek out new creators to 
+back. Doing so only hits me with more fees and doesn't help the rest of the 
+creators that I support. 
+
+I plan on continuing to support the creators that I already 
+follow and I hope that these changes won't hurt them too much. And who knows, 
+this sounds like a great opportunity for a competitor to make a name for 
+itself in the niche that Patreon has had a pretty strong hold of for several 
+years.
