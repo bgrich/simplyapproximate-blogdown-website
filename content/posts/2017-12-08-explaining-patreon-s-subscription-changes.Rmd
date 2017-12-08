@@ -8,6 +8,44 @@ tags: []
 draft: yes
 ---
 
+On December 8th, 2017, I noticed that my Twitter feed was blowing up about 
+the [new changes coming to Patreon](https://blog.patreon.com/updating-patreons-fee-structure/). 
+The big change that has people nervous is that starting in late December, 
+Patreon patrons would have to start paying for credit card service fees. This 
+is a change over the previous system where all fees were taken out of the 
+amount the creator received directly. 
+While overall a switch to charging the patrons the transaction fees doesn't 
+seem like a huge change, the deeper change of interest is the disaggregation 
+of the transaction fees.
+
+The trait that made Patreon different from other services was that you could 
+aggregate the transaction fees. With any credit card transaction, there is 
+typically a fee of some percentage of the charge plus a standard cost. For 
+Patreon, this was a 1.9% + \$0.30 fee that was subtracted from the money sent 
+to the creators. This was done once a month for all of your pledges, so if you 
+pledge to a number of different creators the transaction fee would be spread 
+across them. Under the new system, Patreon is going to charge a 2.9% + 
+\$0.35 on top of each pledge made. This means that a person that pledges \$1 
+to 10 different creators is going to be paying a \$3.79 transaction fee where 
+previously that fee was \$0.64. 
+
+There are a few major concerns in the community regarding this. Some of the 
+main ones being that many creators make their money from small pledges and 
+the additional service fee might make those patrons leave. Some patrons may 
+only have so much they can spend on Patreon per month, so those patrons may 
+drop some of their small pledges or leave the platform entirely. 
+
+When I first read about this, I didn't realize that they were going to 
+disaggregate the pledge payments. But then I saw this Twitter post from 
+/@FoldableHuman that included a picture from the updated Patreon blog post 
+about the changes: 
+
+```{r, echo = FALSE}
+blogdown::shortcode('tweet', '939007425188847616')
+```
+
+
+
 ```{r, message = FALSE}
 library(tidyverse)
 ```
@@ -37,9 +75,7 @@ full brunt of the new transaction fee (2.9% + $0.35).
 To understand how this affects the patron, we will look at a simplified 
 example.
 
-### Example: Same pledge amount
-
-#### Old System
+### Old System
 
 Let us assume that the patron gives the same amount to each 
 creator. For the old payment system, we could model it something like this. 
@@ -123,7 +159,7 @@ old_payment_calculation %>%
 Again, we see a similar trend of increase percentages for more creators being 
 supported.
 
-#### New System
+### New System
 
 Now, we want to calculate the same break down, but for the new system of 
 subscriptions and transactions. A key note here, the amount pledged by the 
@@ -205,7 +241,7 @@ Now we have a flat line for each level. Disaggregating the user payments means
 that increasing the number of creators supported makes no change in the percent 
 that creators take home from what the patrons pay.
 
-#### Comparison
+### Comparison
 
 Let's put these side by side for easier comparison.
 
