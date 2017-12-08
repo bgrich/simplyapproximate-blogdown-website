@@ -123,33 +123,130 @@ old_payment_calculation %>%
 Again, we see a similar trend of increase percentages for more creators being 
 supported.
 
+#### New System
 
-
-
-
-
-```{r}
-old_payment_stripe <- function(pledge_amount) {
-  stripe_fee <- sum(pledge_amount) * 0.019 + 0.3
-  patreon_cut <- pledge_amount * 0.05
-  
-  breakdown <- tibble(pledge = pledge_amount, 
-                    old_stripe_creator_cut = pledge_amount - stripe_fee / length(pledge_amount) - patreon_cut, 
-                    old_stripe_patron_paid = pledge_amount, 
-                    old_stripe_creator_percent = (pledge_amount - stripe_fee / length(pledge_amount) - patreon_cut) / pledge_amount)  
-  return(breakdown)
-}
-```
+Now, we want to calculate the same break down, but for the new system of 
+subscriptions and transactions. A key note here, the amount pledged by the 
+patron and the amount actually paid by the patron will be different. Under the 
+new system, Patreon will add a 2.9% + $0.35 service fee onto every pledge and 
+the pledges will be transacted separately.
 
 ```{r}
-new_payment <- function(pledge_amount) {
+new_payment <- function(pledge_amount, number_supported) {
   transaction_fee <- pledge_amount * 0.029 + 0.35
   patreon_cut <- pledge_amount * 0.05
   
-  breakdown <- tibble(pledge = pledge_amount, 
-                    new_creator_cut = pledge_amount - patreon_cut, 
+  breakdown <- tibble(new_creator_cut = pledge_amount - patreon_cut, 
                     new_patron_paid = pledge_amount + transaction_fee, 
-                    new_creator_percent = (pledge_amount - patreon_cut) / new_patron_paid)  
-  return(breakdown)
+                    new_creator_percent = (pledge_amount - patreon_cut) / new_patron_paid * 100)  
 }
 ```
+
+As with the old system of payment, let's calculate the breakdown over a range 
+of pledges from \$1 to \$20 and a range of creators supported from 1 to 20.
+
+```{r}
+new_payment_calculation <- tibble(pledge = c(1:20)) %>% 
+  mutate(list(tibble(creators = c(1:20)))) %>% 
+  unnest() %>% 
+  group_by(pledge, creators) %>% 
+  mutate(list(new_payment(pledge, creators))) %>% 
+  unnest() %>% 
+  ungroup()
+```
+
+We can now recreate the figures above using the new calculation.
+First we will look at the percentage taken home as a function of the 
+amount pledged. This plot is color coded for the number of creators supported.
+
+```{r}
+new_payment_calculation %>% 
+  filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = pledge, 
+             y = new_creator_percent, 
+             color = as.factor(creators))) + 
+  geom_line(size = 1, position = "jitter") +
+  theme_bw() + 
+  labs(x = "Amount Pledged (USD)", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Number of\nCreators\nSupported") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Here we see that the percentage that the creator takes home compared to what 
+the patron actually paid increases with increases in the amount pledged, just 
+as in the old case. However, the number of creators supported is no longer 
+coupled to the service feed. This means that there is no link between the 
+percentage of amount paid by the patron that the creator takes home and the 
+number of creators supported. This is seen here by all of the different color 
+lines for the number of creators supported overlapping. The lines themselves 
+were jittered so that the overlap would be clear.
+
+This becomes even clearer when we look at the percentage of amount paid by the 
+patron as a function of the number of creators supported.
+
+```{r}
+new_payment_calculation %>% 
+  filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = creators, 
+             y = new_creator_percent, 
+             color = as.factor(pledge))) + 
+  geom_line(size = 1) +
+  theme_bw() + 
+  labs(x = "Number of Creators Supported", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Amount Pledged\n(USD)") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Now we have a flat line for each level. Disaggregating the user payments means 
+that increasing the number of creators supported makes no change in the percent 
+that creators take home from what the patrons pay.
+
+#### Comparison
+
+Let's put these side by side for easier comparison.
+
+```{r}
+comparison <- old_payment_calculation %>% 
+  left_join(new_payment_calculation, 
+            by = c("pledge", "creators")) %>% 
+  gather(system, creator_percent, old_stripe_creator_percent, new_creator_percent)
+```
+
+```{r}
+comparison %>% 
+  filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = pledge, 
+             y = creator_percent, 
+             color = as.factor(creators))) + 
+  geom_line(size = 1) +
+  geom_point() +
+  facet_grid(. ~ system) +
+  theme_bw() + 
+  labs(x = "Amount Pledged (USD)", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Number of\nCreators\nSupported") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+```{r}
+comparison %>% 
+  filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = creators, 
+             y = creator_percent, 
+             color = as.factor(pledge))) + 
+  geom_line(size = 1) +
+  geom_point() +
+  facet_grid(. ~ system) +
+  theme_bw() + 
+  labs(x = "Number of Creators Supported", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Amount Pledged\n(USD)") +
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
