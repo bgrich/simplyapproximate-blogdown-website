@@ -267,6 +267,9 @@ comparison <- old_payment_calculation %>%
 
 ```
 
+First, let's take a look at the precentage of amount paid to the creator as 
+a function of amount pledged for both systems.
+
 ```{r}
 comparison %>% 
   filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
@@ -284,6 +287,10 @@ comparison %>%
   ylim(c(NA, 100))
 ```
 
+Here it is clear that no matter how many creators you support under the new 
+system, you still get a percentage very close to only supporting a single 
+creator under the old system.
+
 ```{r}
 comparison %>% 
   filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
@@ -300,4 +307,9 @@ comparison %>%
   scale_color_brewer(palette = "Dark2") + 
   ylim(c(NA, 100))
 ```
+
+The story is similar here when looking as a function of the number of creators 
+supported. Your money as a patron goes further for the creators the more 
+creators you support under the old system. Under the new system, more of your 
+money is going into fees if you support multiple creators with small pledges. 
 
