@@ -213,7 +213,9 @@ Let's put these side by side for easier comparison.
 comparison <- old_payment_calculation %>% 
   left_join(new_payment_calculation, 
             by = c("pledge", "creators")) %>% 
-  gather(system, creator_percent, old_stripe_creator_percent, new_creator_percent)
+  gather(system, creator_percent, old_stripe_creator_percent, new_creator_percent) %>% 
+  mutate(system = factor(system, levels = c("old_stripe_creator_percent", "new_creator_percent"), labels = c("Old", "New")))
+
 ```
 
 ```{r}
