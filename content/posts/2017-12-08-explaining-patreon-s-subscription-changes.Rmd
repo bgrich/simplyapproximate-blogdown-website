@@ -8,6 +8,9 @@ tags: []
 draft: yes
 ---
 
+```{r, message = FALSE}
+library(tidyverse)
+```
 
 ## Leveraging User's Money
 
@@ -21,15 +24,132 @@ only use the current Patreon fee of 5% and the current Stripe payment processing
 fee of 1.9% + $0.30 per transaction as that is most similar to the new proposed 
 fee structure.
 
+Under the old structure, Patreon would aggregate the fees for pledge 
+transactions. What this means is that at the first of each month, they would 
+charge your credit card only once for all of your pledges, subtract off the 
+transaction fee, and then divide the remaining amount among the creators you 
+pledged to (after taking their 5% cut). 
+
+Under the new system, Patreon removes the aggregation of fees and will charge 
+your credit card for each pledge. This means that each pledge will feel the 
+full brunt of the new transaction fee (2.9% + $0.35). 
+
+To understand how this affects the patron, we will look at a simplified 
+example.
+
+### Example: Same pledge amount
+
+#### Old System
+
+Let us assume that the patron gives the same amount to each 
+creator. For the old payment system, we could model it something like this. 
+
 ```{r}
-old_payment_stripe <- function(pledge_amount) {
-  stripe_fee <- pledge_amount * 0.019 + 0.3
+old_payment <- function(pledge_amount, number_supported) {
+  stripe_fee <- pledge_amount * number_supported * 0.019 + 0.3
   patreon_cut <- pledge_amount * 0.05
   
-  breakdown <- list(old_stripe_creator_cut = pledge_amount - stripe_fee - patreon_cut, 
+  breakdown <- tibble(old_stripe_creator_cut = pledge_amount - stripe_fee / number_supported - patreon_cut, 
                     old_stripe_patron_paid = pledge_amount, 
-                    old_stripe_creator_percent = (pledge_amount - stripe_fee - patreon_cut) / pledge_amount)  
+                    old_stripe_creator_percent = (pledge_amount - stripe_fee / number_supported - patreon_cut) / pledge_amount * 100)  
+}
+```
+
+Here we say that the user pledges some amount to n creators. We can break down 
+the amount the user pays and the amount the creator makes as follows: 
+
+* The cut the creator made (after fees and Patreon cut) 
+* The amount the patron paid 
+* The percentage of money the creator gets from what the patron paid
+
+This last breakdown is the most important for me as it gives a hint to how much 
+of the money the patron spends is actually going to the creator. Now, let's 
+calculate the breakdown over a range of pledges from \$1 to \$20 and a range 
+of creators supported from 1 to 20.
+
+```{r}
+old_payment_calculation <- tibble(pledge = c(1:20)) %>% 
+  mutate(list(tibble(creators = c(1:20)))) %>% 
+  unnest() %>% 
+  group_by(pledge, creators) %>% 
+  mutate(list(old_payment(pledge, creators))) %>% 
+  unnest() %>% 
+  ungroup()
+```
+
+We can now plot the percentage of the patrons money that the creators will take 
+home. First we will look at the percentage taken home as a function of the 
+amount pledged. This plot is color coded for the number of creators supported.
+
+```{r}
+old_payment_calculation %>% 
+  filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = pledge, 
+             y = old_stripe_creator_percent, 
+             color = as.factor(creators))) + 
+  geom_line(size = 1) +
+  theme_bw() + 
+  labs(x = "Amount Pledged (USD)", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Number of\nCreators\nSupported") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Here we see that the percentage that the creator takes home compared to what 
+the patron actually paid increases with increases in the amount pledged. 
+Additionally, as the number of creators supported increases, the percentage 
+of low pledge amounts taken home drastically increases. 
+
+We can compare that to a plot of the percentage taken home by the creator as 
+a function of the number of creators supported with color showing the 
+amount of money pledged.
+
+```{r}
+old_payment_calculation %>% 
+  filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
+  ggplot(aes(x = creators, 
+             y = old_stripe_creator_percent, 
+             color = as.factor(pledge))) + 
+  geom_line(size = 1) +
+  theme_bw() + 
+  labs(x = "Number of Creators Supported", 
+         y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
+         color = "Amount Pledged\n(USD)") + 
+  scale_color_brewer(palette = "Dark2") + 
+  ylim(c(NA, 100))
+```
+
+Again, we see a similar trend of increase percentages for more creators being 
+supported.
+
+
+
+
+
+
+```{r}
+old_payment_stripe <- function(pledge_amount) {
+  stripe_fee <- sum(pledge_amount) * 0.019 + 0.3
+  patreon_cut <- pledge_amount * 0.05
+  
+  breakdown <- tibble(pledge = pledge_amount, 
+                    old_stripe_creator_cut = pledge_amount - stripe_fee / length(pledge_amount) - patreon_cut, 
+                    old_stripe_patron_paid = pledge_amount, 
+                    old_stripe_creator_percent = (pledge_amount - stripe_fee / length(pledge_amount) - patreon_cut) / pledge_amount)  
   return(breakdown)
 }
 ```
 
+```{r}
+new_payment <- function(pledge_amount) {
+  transaction_fee <- pledge_amount * 0.029 + 0.35
+  patreon_cut <- pledge_amount * 0.05
+  
+  breakdown <- tibble(pledge = pledge_amount, 
+                    new_creator_cut = pledge_amount - patreon_cut, 
+                    new_patron_paid = pledge_amount + transaction_fee, 
+                    new_creator_percent = (pledge_amount - patreon_cut) / new_patron_paid)  
+  return(breakdown)
+}
+```
