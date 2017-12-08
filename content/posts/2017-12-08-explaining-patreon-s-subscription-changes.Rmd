@@ -6,6 +6,8 @@ slug: explaining-patreon-s-subscription-changes
 categories: []
 tags: []
 draft: yes
+comments: false
+share: false
 ---
 
 On December 8th, 2017, I noticed that my Twitter feed was blowing up about 
@@ -61,7 +63,7 @@ the total money paid by the patron that is given to the creator*
 
 ## Leveraging Patron's Money
 
-```{r, message = FALSE}
+```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
 ```
 
@@ -93,7 +95,7 @@ example.
 Let us assume that the patron gives the same amount to each 
 creator. For the old payment system, we could model it something like this. 
 
-```{r}
+```{r, echo = FALSE}
 old_payment <- function(pledge_amount, number_supported) {
   stripe_fee <- pledge_amount * number_supported * 0.019 + 0.3
   patreon_cut <- pledge_amount * 0.05
@@ -116,7 +118,7 @@ of the money the patron spends is actually going to the creator. Now, let's
 calculate the breakdown over a range of pledges from \$1 to \$20 and a range 
 of creators supported from 1 to 20.
 
-```{r}
+```{r, echo = FALSE}
 old_payment_calculation <- tibble(pledge = c(1:20)) %>% 
   mutate(list(tibble(creators = c(1:20)))) %>% 
   unnest() %>% 
@@ -130,7 +132,7 @@ We can now plot the percentage of the patrons money that the creators will take
 home. First we will look at the percentage taken home as a function of the 
 amount pledged. This plot is color coded for the number of creators supported.
 
-```{r}
+```{r, echo = FALSE}
 old_payment_calculation %>% 
   filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
   ggplot(aes(x = pledge, 
@@ -154,7 +156,7 @@ We can compare that to a plot of the percentage taken home by the creator as
 a function of the number of creators supported with color showing the 
 amount of money pledged.
 
-```{r}
+```{r, echo = FALSE}
 old_payment_calculation %>% 
   filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
   ggplot(aes(x = creators, 
@@ -180,7 +182,7 @@ patron and the amount actually paid by the patron will be different. Under the
 new system, Patreon will add a 2.9% + $0.35 service fee onto every pledge and 
 the pledges will be transacted separately.
 
-```{r}
+```{r, echo = FALSE}
 new_payment <- function(pledge_amount, number_supported) {
   transaction_fee <- pledge_amount * 0.029 + 0.35
   patreon_cut <- pledge_amount * 0.05
@@ -194,7 +196,7 @@ new_payment <- function(pledge_amount, number_supported) {
 As with the old system of payment, let's calculate the breakdown over a range 
 of pledges from \$1 to \$20 and a range of creators supported from 1 to 20.
 
-```{r}
+```{r, echo = FALSE}
 new_payment_calculation <- tibble(pledge = c(1:20)) %>% 
   mutate(list(tibble(creators = c(1:20)))) %>% 
   unnest() %>% 
@@ -208,7 +210,7 @@ We can now recreate the figures above using the new calculation.
 First we will look at the percentage taken home as a function of the 
 amount pledged. This plot is color coded for the number of creators supported.
 
-```{r}
+```{r, echo = FALSE}
 new_payment_calculation %>% 
   filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
   ggplot(aes(x = pledge, 
@@ -235,7 +237,7 @@ were jittered so that the overlap would be clear.
 This becomes even clearer when we look at the percentage of amount paid by the 
 patron as a function of the number of creators supported.
 
-```{r}
+```{r, echo = FALSE}
 new_payment_calculation %>% 
   filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
   ggplot(aes(x = creators, 
@@ -258,7 +260,7 @@ that creators take home from what the patrons pay.
 
 Let's put these side by side for easier comparison.
 
-```{r}
+```{r, echo = FALSE}
 comparison <- old_payment_calculation %>% 
   left_join(new_payment_calculation, 
             by = c("pledge", "creators")) %>% 
@@ -270,7 +272,7 @@ comparison <- old_payment_calculation %>%
 First, let's take a look at the precentage of amount paid to the creator as 
 a function of amount pledged for both systems.
 
-```{r}
+```{r, echo = FALSE}
 comparison %>% 
   filter(creators %in% c(1, 2, 4, 10, 20)) %>% 
   ggplot(aes(x = pledge, 
@@ -291,7 +293,7 @@ Here it is clear that no matter how many creators you support under the new
 system, you still get a percentage very close to only supporting a single 
 creator under the old system.
 
-```{r}
+```{r, echo = FALSE}
 comparison %>% 
   filter(pledge %in% c(1, 2, 4, 10, 20)) %>% 
   ggplot(aes(x = creators, 
