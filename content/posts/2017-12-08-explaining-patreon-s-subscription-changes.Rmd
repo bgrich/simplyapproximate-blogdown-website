@@ -3,8 +3,10 @@ title: Explaining Patreon's Subscription Changes
 author: Brian Richards
 date: '2017-12-08'
 slug: explaining-patreon-s-subscription-changes
-categories: []
-tags: []
+categories: 
+  - Random Ramblings
+tags: 
+  - Random Ramblings
 draft: yes
 comments: false
 share: false
@@ -128,7 +130,7 @@ old_payment_calculation <- tibble(pledge = c(1:20)) %>%
   ungroup()
 ```
 
-We can now plot the percentage of the patrons money that the creators will take 
+We can plot the percentage of the patrons money that the creators will take 
 home. First we will look at the percentage taken home as a function of the 
 amount pledged. This plot is color coded for the number of creators supported.
 
@@ -173,7 +175,7 @@ old_payment_calculation %>%
   ylim(c(NA, 100))
 ```
 
-Again, we see a similar trend of increase percentages for more creators being 
+Again, we see a similar trend of increased percentages for more creators being 
 supported.
 
 ### New System
@@ -208,7 +210,7 @@ new_payment_calculation <- tibble(pledge = c(1:20)) %>%
   ungroup()
 ```
 
-We can now recreate the figures above using the new calculation.
+We can recreate the figures above using the new calculation.
 First we will look at the percentage taken home as a function of the 
 amount pledged. This plot is color coded for the number of creators supported.
 
@@ -230,7 +232,7 @@ new_payment_calculation %>%
 Here we see that the percentage that the creator takes home compared to what 
 the patron actually paid increases with increases in the amount pledged, just 
 as in the old case. However, the number of creators supported is no longer 
-coupled to the service feed. This means that there is no link between the 
+coupled to the service fee. This means that there is no link between the 
 percentage of amount paid by the patron that the creator takes home and the 
 number of creators supported. This is seen here by all of the different color 
 lines for the number of creators supported overlapping. The lines themselves 
@@ -355,7 +357,8 @@ to help get more money into the pockets of the creators.
 Patreon claims that they are doing this with intention of getting the most 
 money for creators. I think that is a goal that everyone can agree on. But for 
 me, my goal is to get as much money as I can directly to the creators. Small 
-pledges are hard to work because of the flat fee attached to transaction fees. 
+pledges are hard to make work because of the flat fee attached to transaction 
+fees. 
 By aggregating the transactions, Patreon helped make these work for creators. 
 Under the new system, they aren't encouraging me to seek out new creators to 
 back. Doing so only hits me with more fees and doesn't help the rest of the 
@@ -364,5 +367,5 @@ creators that I support.
 I plan on continuing to support the creators that I already 
 follow and I hope that these changes won't hurt them too much. And who knows, 
 this sounds like a great opportunity for a competitor to make a name for 
-itself in a niche that Patreon has had a pretty strong hold of for several 
+itself in the niche that Patreon has had a pretty strong hold of for several 
 years.
