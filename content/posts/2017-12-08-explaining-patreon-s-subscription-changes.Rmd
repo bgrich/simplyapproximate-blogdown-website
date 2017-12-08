@@ -313,3 +313,52 @@ supported. Your money as a patron goes further for the creators the more
 creators you support under the old system. Under the new system, more of your 
 money is going into fees if you support multiple creators with small pledges. 
 
+Let me say that again. **Under the new system, more of the patron's money 
+goes into fees if you support multiple creators with small pledges.**
+
+Of course, my scenario above is a generalization. There are likely not patrons 
+pledging the same value to all creators. Some are probably pledging more to 
+some creators than others. However, any aggregation of the transaction fees 
+is a benefit to the creators and the patrons both.
+
+## A Note on Patreon's Reasoning
+
+In reading through their blog post, I understand why Patreon made the 
+decision that they did. Their decision stems from a desire to allow creators to 
+require patrons to pay first before being able to access their rewards. But 
+this apparently led to a problem of perceived double booking, where patrons 
+got charged immediately and then were charged shortly after when the first of 
+the month rolled around. To fix this problem, Patreon decided to switch to a 
+new subscription system that removed the possibility to aggregate fees because 
+every pledge would now be a separate subscription with its own transaction that 
+occured monthly depending on when you initially pledged. So if you pledged to 
+four different creators, you now have four different transactions instead of 
+all of the transactions being aggregated into one.
+
+In Patreon's own words: 
+
+> "...we need to move our payments system to treat your pledges like *any other 
+> subscription* service. In other words, we need a system that charges patrons at 
+> the time of their initial pledge, and on the anniversary of their pledge each 
+> month thereafter."
+
+For me, the part where they have gone wrong on this is that Patreon isn't like 
+any other subscription service. It is an opportunity for creators to get direct 
+help from their fans and make use of large fanbases that might not be able to 
+pay large amounts of money. By aggregating the transaction fees, they are able 
+to help get more money into the pockets of the creators.
+
+Patreon claims that they are doing this with intention of getting the most 
+money for creators. I think that is a goal that everyone can agree on. But for 
+me, my goal is to get as much money as I can directly to the creators. Small 
+pledges are hard to work because of the flat fee attached to transaction fees. 
+By aggregating the transactions, Patreon helped make these work for creators. 
+Under the new system, they aren't encouraging me to seek out new creators to 
+back. Doing so only hits me with more fees and doesn't help the rest of the 
+creators that I support. 
+
+I plan on continuing to support the creators that I already 
+follow and I hope that these changes won't hurt them too much. And who knows, 
+this sounds like a great opportunity for a competitor to make a name for 
+itself in a niche that Patreon has had a pretty strong hold of for several 
+years.
