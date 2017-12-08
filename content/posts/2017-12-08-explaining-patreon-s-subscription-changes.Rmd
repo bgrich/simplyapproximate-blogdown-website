@@ -37,20 +37,30 @@ drop some of their small pledges or leave the platform entirely.
 
 When I first read about this, I didn't realize that they were going to 
 disaggregate the pledge payments. But then I saw this Twitter post from 
-/@FoldableHuman that included a picture from the updated Patreon blog post 
+\@FoldableHuman that included a picture from the updated Patreon blog post 
 about the changes: 
 
 ```{r, echo = FALSE}
 blogdown::shortcode('tweet', '939007425188847616')
 ```
 
+That image was my first hint that Patreon was disaggregating the transaction 
+fee in addition to having the patrons pay for it. I also saw a nice figure 
+by \@DarwinAwdWinner showing how much of what the patron is paying for a 
+\$1 pledge goes to the transaction fee, the Patreon cut, and the creator cut:
 
+```{r, echo = FALSE}
+blogdown::shortcode('tweet', '938837508552400896')
+```
+
+These two figure got me thinking. What are these changes doing to the power of 
+each dollar I spend on the service?
+
+## Leveraging Patron's Money
 
 ```{r, message = FALSE}
 library(tidyverse)
 ```
-
-## Leveraging User's Money
 
 After reading about the changes in Patreon's subscription and fee structure, 
 the following question came to me: 
