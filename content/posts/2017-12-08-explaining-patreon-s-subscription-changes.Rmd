@@ -17,8 +17,8 @@ Patreon patrons would have to start paying for credit card service fees. This
 is a change over the previous system where all fees were taken out of the 
 amount the creator received directly. 
 While overall a switch to charging the patrons the transaction fees doesn't 
-seem like a huge change, the deeper change of interest is the disaggregation 
-of the transaction fees.
+seem like a huge change, the deeper change of interest (to me) is the 
+disaggregation of the transaction fees.
 
 The trait that made Patreon different from other services was that you could 
 aggregate the transaction fees. With any credit card transaction, there is 
@@ -95,7 +95,7 @@ example.
 Let us assume that the patron gives the same amount to each 
 creator. For the old payment system, we could model it something like this. 
 
-```{r, echo = FALSE}
+```{r}
 old_payment <- function(pledge_amount, number_supported) {
   stripe_fee <- pledge_amount * number_supported * 0.019 + 0.3
   patreon_cut <- pledge_amount * 0.05
@@ -184,7 +184,7 @@ patron and the amount actually paid by the patron will be different. Under the
 new system, Patreon will add a 2.9% + $0.35 service fee onto every pledge and 
 the pledges will be transacted separately.
 
-```{r, echo = FALSE}
+```{r}
 new_payment <- function(pledge_amount, number_supported) {
   transaction_fee <- pledge_amount * 0.029 + 0.35
   patreon_cut <- pledge_amount * 0.05
