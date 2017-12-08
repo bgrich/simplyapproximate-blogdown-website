@@ -56,6 +56,9 @@ blogdown::shortcode('tweet', '938837508552400896')
 These two figure got me thinking. What are these changes doing to the power of 
 each dollar I spend on the service?
 
+*Note that in the following section I will be talking about the percentage of 
+the total money paid by the patron that is given to the creator*
+
 ## Leveraging Patron's Money
 
 ```{r, message = FALSE}
