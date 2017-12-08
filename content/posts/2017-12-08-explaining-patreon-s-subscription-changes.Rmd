@@ -139,6 +139,7 @@ old_payment_calculation %>%
              y = old_stripe_creator_percent, 
              color = as.factor(creators))) + 
   geom_line(size = 1) +
+  geom_point() + 
   theme_bw() + 
   labs(x = "Amount Pledged (USD)", 
          y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
@@ -163,6 +164,7 @@ old_payment_calculation %>%
              y = old_stripe_creator_percent, 
              color = as.factor(pledge))) + 
   geom_line(size = 1) +
+  geom_point() +
   theme_bw() + 
   labs(x = "Number of Creators Supported", 
          y = "Percentage of Amount Paid\n(Creators Take / Amount Paid) * 100", 
