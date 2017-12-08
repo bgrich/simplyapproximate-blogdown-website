@@ -1,0 +1,35 @@
+---
+title: Explaining Patreon's Subscription Changes
+author: Brian Richards
+date: '2017-12-08'
+slug: explaining-patreon-s-subscription-changes
+categories: []
+tags: []
+draft: yes
+---
+
+
+## Leveraging User's Money
+
+After reading about the changes in Patreon's subscription and fee structure, 
+the following question came to me: 
+
+> Is the power of my money spent being reduced by the loss of fee aggregation?
+
+To figure that out, let's do a calculation. For simplicity, I am going to 
+only use the current Patreon fee of 5% and the current Stripe payment processing 
+fee of 1.9% + $0.30 per transaction as that is most similar to the new proposed 
+fee structure.
+
+```{r}
+old_payment_stripe <- function(pledge_amount) {
+  stripe_fee <- pledge_amount * 0.019 + 0.3
+  patreon_cut <- pledge_amount * 0.05
+  
+  breakdown <- list(old_stripe_creator_cut = pledge_amount - stripe_fee - patreon_cut, 
+                    old_stripe_patron_paid = pledge_amount, 
+                    old_stripe_creator_percent = (pledge_amount - stripe_fee - patreon_cut) / pledge_amount)  
+  return(breakdown)
+}
+```
+
