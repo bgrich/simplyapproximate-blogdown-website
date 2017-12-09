@@ -151,7 +151,7 @@ old_payment_calculation %>%
 ```
 
 Here we see that the percentage that the creator takes home compared to what 
-the patron actually paid increases with increases in the amount pledged. 
+the patron actually paid increases with the amount pledged. 
 Additionally, as the number of creators supported increases, the percentage 
 of low pledge amounts taken home drastically increases. 
 
