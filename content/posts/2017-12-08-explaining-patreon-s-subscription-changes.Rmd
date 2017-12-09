@@ -1,8 +1,8 @@
 ---
-title: Explaining Patreon's Subscription Changes
+title: Patreon\: Problems with Disaggregation
 author: Brian Richards
 date: '2017-12-08'
-slug: explaining-patreon-s-subscription-changes
+slug: patreon-problems-with-disaggregation
 categories: 
   - Random Ramblings
 tags: 
