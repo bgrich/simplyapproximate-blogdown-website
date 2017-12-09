@@ -1,8 +1,8 @@
 ---
-title: Explaining Patreon's Subscription Changes
+title: "Patreon: Problems with Disaggregation"
 author: Brian Richards
 date: '2017-12-08'
-slug: explaining-patreon-s-subscription-changes
+slug: patreon-problems-with-disaggregation
 categories: 
   - Random Ramblings
 tags: 
@@ -14,8 +14,8 @@ share: false
 
 On December 8th, 2017, I noticed that my Twitter feed was blowing up about 
 the [new changes coming to Patreon](https://blog.patreon.com/updating-patreons-fee-structure/). 
-The big change that has people nervous is that starting in late December, 
-Patreon patrons would have to start paying for credit card service fees. This 
+The big change that has people nervous is this: starting in late December, 
+Patreon patrons will have to start paying for credit card service fees. This 
 is a change over the previous system where all fees were taken out of the 
 amount the creator received directly. 
 While overall a switch to charging the patrons the transaction fees doesn't 
@@ -151,7 +151,7 @@ old_payment_calculation %>%
 ```
 
 Here we see that the percentage that the creator takes home compared to what 
-the patron actually paid increases with increases in the amount pledged. 
+the patron actually paid increases with the amount pledged. 
 Additionally, as the number of creators supported increases, the percentage 
 of low pledge amounts taken home drastically increases. 
 
@@ -315,12 +315,13 @@ comparison %>%
 ```
 
 The story is similar here when looking as a function of the number of creators 
-supported. Your money as a patron goes further for the creators the more 
+supported. As a patron, your money goes further for the creators the more 
 creators you support under the old system. Under the new system, more of your 
 money is going into fees if you support multiple creators with small pledges. 
 
-Let me say that again. **Under the new system, more of the patron's money 
-goes into fees if you support multiple creators with small pledges.**
+Let me say that again. **In comparison to the old system, more of the patron's 
+money goes into fees if you support multiple creators with small pledges under 
+the new system.**
 
 Of course, my scenario above is a generalization. There are likely not patrons 
 pledging the same value to all creators. Some are probably pledging more to 
