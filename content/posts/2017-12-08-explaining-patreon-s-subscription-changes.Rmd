@@ -1,5 +1,5 @@
 ---
-title: Patreon\: Problems with Disaggregation
+title: "Patreon: Problems with Disaggregation"
 author: Brian Richards
 date: '2017-12-08'
 slug: patreon-problems-with-disaggregation
