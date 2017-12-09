@@ -315,12 +315,13 @@ comparison %>%
 ```
 
 The story is similar here when looking as a function of the number of creators 
-supported. Your money as a patron goes further for the creators the more 
+supported. As a patron, your money goes further for the creators the more 
 creators you support under the old system. Under the new system, more of your 
 money is going into fees if you support multiple creators with small pledges. 
 
-Let me say that again. **Under the new system, more of the patron's money 
-goes into fees if you support multiple creators with small pledges.**
+Let me say that again. **In comparison to the old system, more of the patron's 
+money goes into fees if you support multiple creators with small pledges under 
+the new system.**
 
 Of course, my scenario above is a generalization. There are likely not patrons 
 pledging the same value to all creators. Some are probably pledging more to 
