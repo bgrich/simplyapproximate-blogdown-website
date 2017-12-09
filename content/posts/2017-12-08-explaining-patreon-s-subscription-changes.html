@@ -1,8 +1,8 @@
 ---
-title: Explaining Patreon's Subscription Changes
+title: "Patreon: Problems with Disaggregation"
 author: Brian Richards
 date: '2017-12-08'
-slug: explaining-patreon-s-subscription-changes
+slug: patreon-problems-with-disaggregation
 categories: 
   - Random Ramblings
 tags: 
@@ -14,7 +14,7 @@ share: false
 
 
 
-<p>On December 8th, 2017, I noticed that my Twitter feed was blowing up about the <a href="https://blog.patreon.com/updating-patreons-fee-structure/">new changes coming to Patreon</a>. The big change that has people nervous is that starting in late December, Patreon patrons would have to start paying for credit card service fees. This is a change over the previous system where all fees were taken out of the amount the creator received directly. While overall a switch to charging the patrons the transaction fees doesn’t seem like a huge change, the deeper change of interest (to me) is the disaggregation of the transaction fees.</p>
+<p>On December 8th, 2017, I noticed that my Twitter feed was blowing up about the <a href="https://blog.patreon.com/updating-patreons-fee-structure/">new changes coming to Patreon</a>. The big change that has people nervous is this: starting in late December, Patreon patrons will have to start paying for credit card service fees. This is a change over the previous system where all fees were taken out of the amount the creator received directly. While overall a switch to charging the patrons the transaction fees doesn’t seem like a huge change, the deeper change of interest (to me) is the disaggregation of the transaction fees.</p>
 <p>The trait that made Patreon different from other services was that you could aggregate the transaction fees. With any credit card transaction, there is typically a fee of some percentage of the charge plus a standard cost. For Patreon, this was a 1.9% + $0.30 fee that was subtracted from the money sent to the creators. This was done once a month for all of your pledges, so if you pledge to a number of different creators the transaction fee would be spread across them. Under the new system, Patreon is going to charge a 2.9% + $0.35 on top of each pledge made. This means that a person that pledges $1 to 10 different creators is going to be paying a $3.79 transaction fee where previously that fee was $0.64.</p>
 <p>There are a few major concerns in the community regarding this. Some of the main ones being that many creators make their money from small pledges and the additional service fee might make those patrons leave. Some patrons may only have so much they can spend on Patreon per month, so those patrons may drop some of their small pledges or leave the platform entirely.</p>
 <p>When I first read about this, I didn’t realize that they were going to disaggregate the pledge payments. But then I saw this Twitter post from @FoldableHuman that included a picture from the updated Patreon blog post about the changes:</p>
@@ -53,7 +53,7 @@ share: false
 <p>This last breakdown is the most important for me as it gives a hint to how much of the money the patron spends is actually going to the creator. Now, let’s calculate the breakdown over a range of pledges from $1 to $20 and a range of creators supported from 1 to 20.</p>
 <p>We can plot the percentage of the patrons money that the creators will take home. First we will look at the percentage taken home as a function of the amount pledged. This plot is color coded for the number of creators supported.</p>
 <p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Here we see that the percentage that the creator takes home compared to what the patron actually paid increases with increases in the amount pledged. Additionally, as the number of creators supported increases, the percentage of low pledge amounts taken home drastically increases.</p>
+<p>Here we see that the percentage that the creator takes home compared to what the patron actually paid increases with the amount pledged. Additionally, as the number of creators supported increases, the percentage of low pledge amounts taken home drastically increases.</p>
 <p>We can compare that to a plot of the percentage taken home by the creator as a function of the number of creators supported with color showing the amount of money pledged.</p>
 <p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Again, we see a similar trend of increased percentages for more creators being supported.</p>
@@ -84,8 +84,8 @@ share: false
 <p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Here it is clear that no matter how many creators you support under the new system, you still get a percentage very close to only supporting a single creator under the old system.</p>
 <p><img src="/posts/2017-12-08-explaining-patreon-s-subscription-changes_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>The story is similar here when looking as a function of the number of creators supported. Your money as a patron goes further for the creators the more creators you support under the old system. Under the new system, more of your money is going into fees if you support multiple creators with small pledges.</p>
-<p>Let me say that again. <strong>Under the new system, more of the patron’s money goes into fees if you support multiple creators with small pledges.</strong></p>
+<p>The story is similar here when looking as a function of the number of creators supported. As a patron, your money goes further for the creators the more creators you support under the old system. Under the new system, more of your money is going into fees if you support multiple creators with small pledges.</p>
+<p>Let me say that again. <strong>In comparison to the old system, more of the patron’s money goes into fees if you support multiple creators with small pledges under the new system.</strong></p>
 <p>Of course, my scenario above is a generalization. There are likely not patrons pledging the same value to all creators. Some are probably pledging more to some creators than others. However, any aggregation of the transaction fees is a benefit to the creators and the patrons both.</p>
 </div>
 </div>
