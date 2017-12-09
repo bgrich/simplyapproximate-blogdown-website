@@ -14,8 +14,8 @@ share: false
 
 On December 8th, 2017, I noticed that my Twitter feed was blowing up about 
 the [new changes coming to Patreon](https://blog.patreon.com/updating-patreons-fee-structure/). 
-The big change that has people nervous is that starting in late December, 
-Patreon patrons would have to start paying for credit card service fees. This 
+The big change that has people nervous is this: starting in late December, 
+Patreon patrons will have to start paying for credit card service fees. This 
 is a change over the previous system where all fees were taken out of the 
 amount the creator received directly. 
 While overall a switch to charging the patrons the transaction fees doesn't 
