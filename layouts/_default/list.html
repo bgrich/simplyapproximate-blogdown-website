@@ -50,7 +50,10 @@
     {{ end }}
   </header>
   <div class="entry-content">
-    {{ .Content }}
+    {{ .Summary }}
+    <br>
+    <br>
+    <a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}" itemprop="url">Read More</a>
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 {{ end }}
