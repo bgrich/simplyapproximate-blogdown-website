@@ -37,18 +37,17 @@
 		  <a href="{{ .RelPermalink }}" title="{{ .Title }}"><img src="{{ .Params.image.feature | relURL }}" alt="{{ .Title }}"></a>
       </div><!-- /.entry-image -->
     {{ end }}
-    <div class="entry-meta">
-        {{ if gt .Date 0001 }} <!-- If Date is set (greater than year 0001) -->
-		<span class="entry-date date published updated"><time datetime="{{ .Date }}"><a href="{{ .RelPermalink }}">{{ .Date.Format "Jan 2, 2006" }}</a></time></span>
-        {{ end }}
-      
-    </div><!-- /.entry-meta -->
     {{ if .Params.link }}
       <h1 class="entry-title"><a href="{{ .RelPermalink }}" class="permalink" rel="bookmark" title="{{ .Title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ .Params.link }}">{{ .Title }}</a></h1>
     {{ else }}
 	<h1 class="entry-title"><a href="{{ .RelPermalink }}" rel="bookmark" title="{{ .Title }}" itemprop="url">{{ .Title }}</a></h1>
     {{ end }}
   </header>
+  <div class="entry-meta">
+        {{ if gt .Date 0001 }} <!-- If Date is set (greater than year 0001) -->
+		<h3>{{ .Date.Format "Jan 2, 2006" }}</h3>
+        {{ end }}
+  </div><!-- /.entry-meta -->
   <div class="entry-content">
     {{ .Summary }}
     <br>
