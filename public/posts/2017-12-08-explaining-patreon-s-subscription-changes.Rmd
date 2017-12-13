@@ -67,6 +67,7 @@ the total money paid by the patron that is given to the creator*
 
 ```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
+set.seed(42)
 ```
 
 After reading about the changes in Patreon's subscription and fee structure, 
