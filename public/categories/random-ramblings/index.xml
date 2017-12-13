@@ -6,10 +6,19 @@
     <description>Recent content in Random Ramblings on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.simplyapproximate.com/categories/random-ramblings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Patreon Reverses Course</title>
+      <link>http://www.simplyapproximate.com/posts/patreon-reverses-course/</link>
+      <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/patreon-reverses-course/</guid>
+      <description>A quick update on what is going on over at Patreon after the announcement last week of changes to their subscription methods and service fees. In a surprising reversal of position, Patreon has decided to not roll out their planned changes. This reversal will keep in place the current system while they find a way forward that allows Patreon to fix the problems that prompted the changes in the first place.</description>
+    </item>
     
     <item>
       <title>Patreon: Problems with Disaggregation</title>
