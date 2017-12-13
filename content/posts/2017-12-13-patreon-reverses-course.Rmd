@@ -1,0 +1,12 @@
+---
+title: Patreon Reverses Course
+author: Brian Richards
+date: '2017-12-13'
+slug: patreon-reverses-course
+categories:
+  - Random Ramblings
+tags:
+  - Random Ramblings
+draft: yes
+---
+
