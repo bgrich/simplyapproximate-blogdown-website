@@ -8,5 +8,29 @@ categories:
 tags:
   - Random Ramblings
 draft: yes
+share: false
+comments: false
 ---
+
+A quick update on what is going on over at Patreon after the announcement last 
+week of changes to their subscription methods and service fees. In a suprising 
+reversal of position, 
+[Patreon has decided to not roll out their planned changes](https://blog.patreon.com/not-rolling-out-fees-change/). This 
+reversal will keep in place the current system while they find a way 
+forward that allows Patreon to fix the problems that prompted the changes in 
+the first place.
+
+Many of the creators that contacted Patreon noted many of the same things that 
+[I mentioned in my post last week](/patreon-problems-with-disaggregation). 
+Specifically, Patreon said that:
+
+> * The new payments system disproportionately impacted $1 – $2 patrons. We 
+> have to build a better system for them. 
+> * Aggregation is highly-valued, and we underestimated that.
+
+Thank you Jack Conte and the team at Patreon for being receptive of the 
+concerns of your creators and patrons. As they mentioned it will be some time 
+before trust is rebuild, but hopefully creators that lost pledges and patrons 
+will be able to quickly grow back their networks.
+
 
