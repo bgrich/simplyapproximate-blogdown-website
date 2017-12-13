@@ -21,7 +21,7 @@ forward that allows Patreon to fix the problems that prompted the changes in
 the first place.
 
 Many of the creators that contacted Patreon noted many of the same things that 
-[I mentioned in my post last week](/patreon-problems-with-disaggregation). 
+[I mentioned in my post last week](/posts/patreon-problems-with-disaggregation/). 
 Specifically, Patreon said that:
 
 > * The new payments system disproportionately impacted $1 – $2 patrons. We 
