@@ -6,10 +6,19 @@
     <description>Recent content in Data Science on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.simplyapproximate.com/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Creating Harry Potter with Machine Learning</title>
+      <link>http://www.simplyapproximate.com/posts/creating-harry-potter-with-machine-learning/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/creating-harry-potter-with-machine-learning/</guid>
+      <description>The other week I came across some work being done by Botnik and Botnik Studios to create strange new things with machine learning. The creation that caught my eye was a chapter for an entirely new Harry Potter book made using a predictive text algorithm like you might find attached to a cell phone keyboard. By training the algorithm on the text of Harry Potter they were able to produce new dialogue and narration that seemed like the original Harry Potter, but is completely new and bizarre.</description>
+    </item>
     
     <item>
       <title>How I Started Using Computational Essays on Accident</title>
