@@ -1,0 +1,16 @@
+---
+title: Creating Harry Potter with Machine Learning
+author: Brian Richards
+date: '2017-12-20'
+slug: creating-harry-potter-with-machine-learning
+categories:
+  - Data Science
+  - Machine Learning
+tags:
+  - Data Science
+  - Machine Learning
+draft: yes
+share: false
+comments: false
+---
+
