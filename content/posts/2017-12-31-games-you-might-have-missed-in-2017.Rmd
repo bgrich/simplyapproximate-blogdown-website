@@ -7,7 +7,7 @@ categories:
   - Video Games
 tags:
   - Video Games
-draft: yes
+draft: no
 share: false
 comments: false
 ---
