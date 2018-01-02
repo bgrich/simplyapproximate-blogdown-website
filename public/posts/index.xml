@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.simplyapproximate.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Playing With The xray Package</title>
+      <link>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</link>
+      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</guid>
+      <description>After seeing an announcement about it on R-Bloggers, I decided to test out the new xray package using the Titanic data set. The xray package provides a few functions for quickly getting a summary of anomalies and distributions of the variables in a data set. For anomalies, the anomalies() function outputs the number and percentage of NA’s, zeroes, empty strings, and infinities while also giving some useful information about distinct observations and variable class.</description>
+    </item>
     
     <item>
       <title>Games You Might Have Missed In 2017</title>
