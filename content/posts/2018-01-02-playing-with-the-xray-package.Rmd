@@ -9,7 +9,7 @@ categories:
 tags:
   - Data Science
   - R
-draft: yes
+draft: no
 share: false
 comments: false
 ---
