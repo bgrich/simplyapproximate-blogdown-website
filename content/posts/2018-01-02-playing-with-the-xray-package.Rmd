@@ -1,0 +1,16 @@
+---
+title: Playing With The xray Package
+author: Brian Richards
+date: '2018-01-02'
+slug: playing-with-the-xray-package
+categories:
+  - Data Science
+  - R
+tags:
+  - Data Science
+  - R
+draft: yes
+share: false
+comments: false
+---
+
