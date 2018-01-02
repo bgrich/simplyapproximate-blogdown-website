@@ -21,11 +21,11 @@ anomalies and distributions of the variables in a data set. For anomalies, the
 `anomalies()` function outputs the number and percentage of NA's, zeroes, empty 
 strings, and infinities while also giving some useful information about 
 distinct observations and variable class. For distributions, the 
-`distributions()` functions outputs boxplots and histograms of each variable. 
+`distributions()` function outputs boxplots and histograms of each variable. 
 For numerical variables, the histograms also have a density curve overlay. 
 These plots give a good starting point for further analysis.
 
-I used the Titanic data set hosted via Kaggle to play around with the `xray` 
+I used the Titanic data set hosted by Kaggle to play around with the `xray` 
 package. Below is a [partial reproduction of my Kaggle kernel](https://www.kaggle.com/bgrich/titanic-eda-using-xray-package) showing 
 an exploratory data analysis of the Titanic data set using `xray`. For the full 
 analysis, see the linked kernel.
@@ -50,13 +50,7 @@ First, we need to import the training.
 training <- read_csv("posts_data/train.csv", progress = FALSE)
 ```
 
-Now, let's take a look at the data.
-
-```{r}
-training
-```
-
-We can also use `glimpse` to take a look at the variables. 
+Now, let's take a look at the data using `glimpse()`.
 
 ```{r}
 glimpse(training)
@@ -150,7 +144,8 @@ be a few repeat tickets that bears a quick investigation.
 Note: As of this writing, the `xray` does not currently support ordered factors. 
 This is why the `Pclass` variable has a class of "Unknown" from the anomalies() 
 function. This will also cause a problem with the distributions() function so 
-we will remove the ordering for that.
+we will remove the ordering for that. This has been fixed in the current 
+iteration of the package available on Github.
 
 ### Distributions with `xray`
 
