@@ -1,0 +1,324 @@
+---
+title: Playing With The xray Package
+author: Brian Richards
+date: '2018-01-02'
+slug: playing-with-the-xray-package
+categories:
+  - Data Science
+  - R
+tags:
+  - Data Science
+  - R
+draft: no
+share: false
+comments: false
+---
+
+
+
+<p>After seeing an <a href="https://blog.datascienceheroes.com/x-ray-vision-on-your-datasets/">announcement about it on R-Bloggers</a>, I decided to test out the new <code>xray</code> package using the Titanic data set. The <code>xray</code> package provides a few functions for quickly getting a summary of anomalies and distributions of the variables in a data set. For anomalies, the <code>anomalies()</code> function outputs the number and percentage of NA’s, zeroes, empty strings, and infinities while also giving some useful information about distinct observations and variable class. For distributions, the <code>distributions()</code> function outputs boxplots and histograms of each variable. For numerical variables, the histograms also have a density curve overlay. These plots give a good starting point for further analysis.</p>
+<p>I used the Titanic data set hosted by Kaggle to play around with the <code>xray</code> package. Below is a <a href="https://www.kaggle.com/bgrich/titanic-eda-using-xray-package">partial reproduction of my Kaggle kernel</a> showing an exploratory data analysis of the Titanic data set using <code>xray</code>. For the full analysis, see the linked kernel.</p>
+<div id="titanic-eda-using-xray-package" class="section level1">
+<h1>Titanic EDA Using <code>xray</code> Package</h1>
+<p>To get a sense for the Titanic data set, we are going to do some exploratory data analysis. As part of that, we will use the <code>xray</code> package to check for anomalies and look at distributions.</p>
+<pre class="r"><code>library(tidyverse)
+library(xray)
+library(knitr)</code></pre>
+<div id="data-import" class="section level2">
+<h2>Data Import</h2>
+<p>First, we need to import the training.</p>
+<pre class="r"><code>training &lt;- read_csv(&quot;posts_data/train.csv&quot;, progress = FALSE)</code></pre>
+<p>Now, let’s take a look at the data using <code>glimpse()</code>.</p>
+<pre class="r"><code>glimpse(training)</code></pre>
+<pre><code>## Observations: 891
+## Variables: 12
+## $ PassengerId &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,...
+## $ Survived    &lt;int&gt; 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0,...
+## $ Pclass      &lt;int&gt; 3, 1, 3, 1, 3, 3, 1, 3, 3, 2, 3, 1, 3, 3, 3, 2, 3,...
+## $ Name        &lt;chr&gt; &quot;Braund, Mr. Owen Harris&quot;, &quot;Cumings, Mrs. John Bra...
+## $ Sex         &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;female&quot;, &quot;female&quot;, &quot;male&quot;, &quot;mal...
+## $ Age         &lt;dbl&gt; 22, 38, 26, 35, 35, NA, 54, 2, 27, 14, 4, 58, 20, ...
+## $ SibSp       &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 3, 0, 1, 1, 0, 0, 1, 0, 0, 4,...
+## $ Parch       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 5, 0, 0, 1,...
+## $ Ticket      &lt;chr&gt; &quot;A/5 21171&quot;, &quot;PC 17599&quot;, &quot;STON/O2. 3101282&quot;, &quot;1138...
+## $ Fare        &lt;dbl&gt; 7.2500, 71.2833, 7.9250, 53.1000, 8.0500, 8.4583, ...
+## $ Cabin       &lt;chr&gt; NA, &quot;C85&quot;, NA, &quot;C123&quot;, NA, NA, &quot;E46&quot;, NA, NA, NA, ...
+## $ Embarked    &lt;chr&gt; &quot;S&quot;, &quot;C&quot;, &quot;S&quot;, &quot;S&quot;, &quot;S&quot;, &quot;Q&quot;, &quot;S&quot;, &quot;S&quot;, &quot;S&quot;, &quot;C&quot;, ...</code></pre>
+<p>We have 12 variables that we will want to look at. According to the data set description from Kaggle, the variables are defined in the following way:</p>
+<ul>
+<li>PassengerId – A numerical id for each passenger.</li>
+<li>Survived – The response variable as a factor showing survival.</li>
+<li>Pclass – The ticket class of the passenger used as a proxy for socio-economic class. This variable is a factor with levels 1 = 1st (Upper Class), 2 = 2nd (Middle Class), and 3 = 3rd (Lower Class).</li>
+<li>Name – The full name of the passenger with title. Married female passengers appear to have their partner’s name listed with their actual name in parentheses.</li>
+<li>Sex – A factor showing the sex of the passenger.</li>
+<li>Age – The age of the passenger. Estimated ages are given as xx.#.</li>
+<li>SibSp – The number of siblings and spouses the passnger has aboard.</li>
+<li>Parch – The number of parent/children relationships that the passneger has aboard.</li>
+<li>Ticket – Ticket number of the passenger.</li>
+<li>Fare – The passenger fare.</li>
+<li>Cabin – The passenge cabin number.</li>
+<li>Embarked – The port of embarkation. This is a factor with three levels C = Cherbourg, Q = Queenstown, S = Southampton.</li>
+</ul>
+<p>Before we begin the exploration, let’s recode the factors with proper levels.</p>
+<pre class="r"><code>training &lt;- training %&gt;% 
+  mutate(Survived = factor(Survived, 
+                           levels = c(1, 0), 
+                           labels = c(&quot;Yes&quot;, &quot;No&quot;))) %&gt;% 
+  mutate(Pclass = factor(Pclass, 
+                         levels = c(3, 2, 1), 
+                         labels = c(&quot;3rd&quot;, &quot;2nd&quot;, &quot;1st&quot;), 
+                         ordered = TRUE)) %&gt;% 
+  mutate(Sex = factor(Sex, 
+                      levels = c(&quot;male&quot;, &quot;female&quot;))) %&gt;% 
+  mutate(Embarked = factor(Embarked, 
+                           levels = c(&quot;C&quot;, &quot;Q&quot;, &quot;S&quot;), 
+                           labels = c(&quot;Cherbourg&quot;, &quot;Queenstown&quot;, &quot;Southampton&quot;)))</code></pre>
+</div>
+<div id="exploration-with-xray" class="section level2">
+<h2>Exploration with <code>xray</code></h2>
+<div id="checking-anomalies-with-xray" class="section level3">
+<h3>Checking Anomalies with <code>xray</code></h3>
+<p>Now that the data sets have been re-coded with factors, let’s take a look for any anomalies in the data set using the <code>xray</code> package. The <code>xray</code> package gives access to several functions for performing exploratory data analysis. The first one we will use is the <code>anomalies()</code> function that returns a data frame summarizing the variables in a provided data frame.</p>
+<p>The function returns summaries for each variable showing:</p>
+<ul>
+<li>The number of observations</li>
+<li>The number and percentage of observations that are NA</li>
+<li>The number and percentage of observations that are zero</li>
+<li>The number and percentage of observations that are blank</li>
+<li>The number and percentage of observations that are infinite</li>
+<li>The number of distinct observations</li>
+<li>The variable type</li>
+<li>The percentage of observations that are “anomalous”</li>
+</ul>
+<p>This information can give us a starting point to examine the data set and see what variables will be useful for training our models.</p>
+<pre class="r"><code>xray::anomalies(training)$variables %&gt;% 
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="right">q</th>
+<th align="right">qNA</th>
+<th align="left">pNA</th>
+<th align="right">qZero</th>
+<th align="left">pZero</th>
+<th align="right">qBlank</th>
+<th align="left">pBlank</th>
+<th align="right">qInf</th>
+<th align="left">pInf</th>
+<th align="right">qDistinct</th>
+<th align="left">type</th>
+<th align="left">anomalous_percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cabin</td>
+<td align="right">891</td>
+<td align="right">687</td>
+<td align="left">77.1%</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">148</td>
+<td align="left">Character</td>
+<td align="left">77.1%</td>
+</tr>
+<tr class="even">
+<td align="left">Parch</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">678</td>
+<td align="left">76.09%</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">7</td>
+<td align="left">Integer</td>
+<td align="left">76.09%</td>
+</tr>
+<tr class="odd">
+<td align="left">SibSp</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">608</td>
+<td align="left">68.24%</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">7</td>
+<td align="left">Integer</td>
+<td align="left">68.24%</td>
+</tr>
+<tr class="even">
+<td align="left">Age</td>
+<td align="right">891</td>
+<td align="right">177</td>
+<td align="left">19.87%</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">89</td>
+<td align="left">Numeric</td>
+<td align="left">19.87%</td>
+</tr>
+<tr class="odd">
+<td align="left">Fare</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">15</td>
+<td align="left">1.68%</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">248</td>
+<td align="left">Numeric</td>
+<td align="left">1.68%</td>
+</tr>
+<tr class="even">
+<td align="left">Embarked</td>
+<td align="right">891</td>
+<td align="right">2</td>
+<td align="left">0.22%</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">4</td>
+<td align="left">Factor</td>
+<td align="left">0.22%</td>
+</tr>
+<tr class="odd">
+<td align="left">Survived</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">2</td>
+<td align="left">Factor</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">Sex</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">2</td>
+<td align="left">Factor</td>
+<td align="left">-</td>
+</tr>
+<tr class="odd">
+<td align="left">Pclass</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">3</td>
+<td align="left">Unknown</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">Ticket</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">681</td>
+<td align="left">Character</td>
+<td align="left">-</td>
+</tr>
+<tr class="odd">
+<td align="left">PassengerId</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">891</td>
+<td align="left">Integer</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">Name</td>
+<td align="right">891</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">0</td>
+<td align="left">-</td>
+<td align="right">891</td>
+<td align="left">Character</td>
+<td align="left">-</td>
+</tr>
+</tbody>
+</table>
+<p>From calculating the anomalies on the training data, we can see that most of the entries in the Cabin variable are NA. There are two options with this entry as we can either remove the Cabin variable entirely or recode all of the NA’s as “No Cabin” or some similar value. We will investigate the other two variables with NA’s below to see if we can turn them into something useful.</p>
+<p>There are also three variables that show a number of zero observations. For the Parch and SibSp variables, this should be fine. This just means that those passengers are traveling without family members. For the fare, we may want to investigate which of the passengers have zero fare as they may be crew members or have some other identifying information.</p>
+<p>One interesting point that pops out from the anomalies function is that the Ticket variable has only 681 distinct observations. This means that there must be a few repeat tickets that bears a quick investigation.</p>
+<p>Note: As of this writing, the <code>xray</code> does not currently support ordered factors. This is why the <code>Pclass</code> variable has a class of “Unknown” from the anomalies() function. This will also cause a problem with the distributions() function so we will remove the ordering for that. This has been fixed in the current iteration of the package available on Github.</p>
+</div>
+<div id="distributions-with-xray" class="section level3">
+<h3>Distributions with <code>xray</code></h3>
+<p>Next, we will use the <code>distributions()</code> function from the <code>xray</code> package to visually inspect the variables. This function returns a series of box plots (for categorical variables) and histograms (for numerical variables) along with giving some distributions and breakdowns for the numerical variables.</p>
+<p>For the bar plots, the axis labeled as “Rows” is actually the number of observations of each variable category. For the histograms, the number of observations has been scaled for the associated density plot.</p>
+<pre class="r"><code>training %&gt;% 
+  select(-PassengerId, -Name) %&gt;% 
+  mutate(Pclass = factor(Pclass, ordered = FALSE)) %&gt;% 
+  xray::distributions()</code></pre>
+<pre><code>## ===========================================================================</code></pre>
+<p><img src="/posts/2018-01-02-playing-with-the-xray-package_files/figure-html/unnamed-chunk-4-1.png" width="864" /><img src="/posts/2018-01-02-playing-with-the-xray-package_files/figure-html/unnamed-chunk-4-2.png" width="864" /><img src="/posts/2018-01-02-playing-with-the-xray-package_files/figure-html/unnamed-chunk-4-3.png" width="864" /></p>
+<pre><code>##   Variable p_1 p_10   p_25    p_50 p_75    p_90     p_99
+## 1    Parch   0    0      0       0    0       2        4
+## 2    SibSp   0    0      0       0    1       1        5
+## 3      Age   1   14 20.125      28   38      50    65.87
+## 4     Fare   0 7.55 7.9104 14.4542   31 77.9583 249.0062</code></pre>
+<p>The <code>distributions()</code> function gives us a very rough visual tool for inspecting the variables. The function allows us to see some general trends and places that could use further checking. For instance, with this data set, it is clear that the fare is being skewed by large outliers. Both the cabin and ticket variables have many categories with low counts that make them hard to visualize with a bar plot. However, the <code>distributions()</code> function works great for the other variables as a means of quick visual analysis.</p>
+</div>
+<div id="thoughts-on-xray-package" class="section level3">
+<h3>Thoughts on <code>xray</code> package</h3>
+<p>The functions in the <code>xray</code> package provide a simple way to quickly glean some insight from unknown data sets. By letting the user pull out information on the anomalies and distributions of variables, the user is able to easily compare the variables and determine which ones require further investigation. It is a wonderful stepping off point for deeper analysis and I look forward to see the package develop further.</p>
+</div>
+</div>
+</div>
