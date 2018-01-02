@@ -44,11 +44,10 @@ library(knitr)
 
 ## Data Import
 
-First, we need to import the training and testing data.
+First, we need to import the training.
 
 ```{r, message = FALSE}
-training <- read_csv("train.csv", progress = FALSE)
-testing <- read_csv("test.csv", progress = FALSE)
+training <- read_csv("posts_data/train.csv", progress = FALSE)
 ```
 
 Now, let's take a look at the data.
@@ -92,19 +91,6 @@ training <- training %>%
   mutate(Survived = factor(Survived, 
                            levels = c(1, 0), 
                            labels = c("Yes", "No"))) %>% 
-  mutate(Pclass = factor(Pclass, 
-                         levels = c(3, 2, 1), 
-                         labels = c("3rd", "2nd", "1st"), 
-                         ordered = TRUE)) %>% 
-  mutate(Sex = factor(Sex, 
-                      levels = c("male", "female"))) %>% 
-  mutate(Embarked = factor(Embarked, 
-                           levels = c("C", "Q", "S"), 
-                           labels = c("Cherbourg", "Queenstown", "Southampton")))
-```
-
-```{r}
-testing <- testing %>% 
   mutate(Pclass = factor(Pclass, 
                          levels = c(3, 2, 1), 
                          labels = c("3rd", "2nd", "1st"), 
