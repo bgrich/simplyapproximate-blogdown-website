@@ -14,3 +14,20 @@ share: false
 comments: false
 ---
 
+After seeing an [announcement about it on R-Bloggers](https://blog.datascienceheroes.com/x-ray-vision-on-your-datasets/), 
+I decided to test out the new `xray` package using the Titanic data set. The 
+`xray` package provides a few functions for quickly getting a summary of 
+anomalies and distributions of the variables in a data set. For anomalies, the 
+`anomalies()` function outputs the number and percentage of NA's, zeroes, empty 
+strings, and infinities while also giving some useful information about 
+distinct observations and variable class. For distributions, the 
+`distributions()` functions outputs boxplots and histograms of each variable. 
+For numerical variables, the histograms also have a density curve overlay. 
+These plots give a good starting point for further analysis.
+
+I used the Titanic data set hosted via Kaggle to play around with the `xray` 
+package. Below is a [partial reproduction of my Kaggle kernel](https://www.kaggle.com/bgrich/titanic-eda-using-xray-package) showing 
+an exploratory data analysis of the Titanic data set using `xray`. For the full 
+analysis, see the linked kernel.
+
+# Titanic EDA Using `xray` Package
