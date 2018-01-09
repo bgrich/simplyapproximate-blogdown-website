@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Towards Reproducible Research &#8211; Simply Approximate</title>
+<meta name="description" content="">
+
+    
+
+<meta name="keywords" content="R, Data Science">
+
+
+
+<meta name="twitter:title" content="Towards Reproducible Research">
+<meta name="twitter:description" content="Thoughts on Physics, Data Science, Games, Books, Dance, and Culture">
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Towards Reproducible Research">
+<meta property="og:description" content="Thoughts on Physics, Data Science, Games, Books, Dance, and Culture">
+<meta property="og:url" content="http://www.simplyapproximate.com/posts/towards-reproducible-research/">
+<meta property="og:site_name" content="Simply Approximate">
+
+
+
+  <meta property="og:updated_time" content="2018-01-09T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+<link rel="canonical" href="http://www.simplyapproximate.com/posts/towards-reproducible-research/">
+
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<meta name="generator" content="Hugo 0.25.1" />
+
+<script src="/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+
+<link rel="shortcut icon" href="/favicon.png">
+
+
+</head>
+
+<body id="post" >
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation" style="display:inline-block">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="/">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+			
+				<li>
+					
+					<img src="/images/avatar.jpg" alt="Brian Richards's photo" class="author-photo">
+					
+					<h4>Brian Richards</h4>
+					<p>Thoughts on Physics, Data Science, Games, Books, Dance, and Culture</p>
+				</li>
+				<li><a href="/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+				
+				
+				
+				
+				
+				<li>
+					<a href="https://github.com/bgrich/simplyapproximate-blogdown-website"><i class="fa fa-fw fa-github"></i> GitHub</a>
+				</li>
+				
+				
+				
+				
+			
+			</ul>
+		</li>
+		<li>
+			<a href="#">Posts</a>
+			<ul class="dl-submenu">
+				<li><a href="/posts/">All Posts</a></li>
+				<li><a href="/tags/">All Tags</a></li>
+			</ul>
+		</li>
+		
+	</ul>
+</nav>
+
+ 
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/posts/towards-reproducible-research/" rel="bookmark" title="Towards Reproducible Research">Towards Reproducible Research</a></h1>
+        
+         
+        <h2><span class="entry-date date published"><time datetime="2018-01-09 00:00:00 &#43;0000 UTC">January 9, 2018</time></span></h2>
+        
+
+      </div>
+    </header>
+    <div class="entry-content">
+      <p>In December, I came across a <a href="http://www.britishecologicalsociety.org/publications/guides-to/">guide to reproducible code in ecology and evolution</a> published by the British Ecological Society. While my background is in physics research, I think the guide is incredibly useful for scientists of all disciplines. Reading through this guide also got me thinking about reproducibility in general and my own journey towards creating reproducible research.</p>
+<p>The British Ecological Society’s guide comes at a time when researchers across the various scientific disciplines are <a href="https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">discussing the importance of reproducibility</a>. This conversation has been prominent enough to <a href="https://fivethirtyeight.com/features/failure-is-moving-science-forward/">garner coverage in the media</a>. <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2015.00827.x/full">Roger Peng wrote an excellent paper in 2015</a> about the reproducibility crisis in the sciences that delved into what has happened and also provides a call to action to improve the global robustness of scientific data analysis.</p>
+<div id="the-guide" class="section level3">
+<h3>The Guide</h3>
+<p>What is actually in the guide? The guide covers a wide swath of reproducible code topics ranging from simple reproducible workflows, to suggestions for programming standards, to an introduction to versioning. Each section breaks down a particular topic and gives some examples of how to implement their suggestions in R. For instance, the section on Reproducible Reports gives a description of what reproducible reports are, why they are important, and then provides a brief guide to using R Markdown to create reproducible reports.</p>
+<p>One of the statements in the guide that I appreciated was the following reminder at the end of the introduction:</p>
+<blockquote>
+<p>True reproducibility is really hard. But do not let this put you off. We would not expect anyone to follow all of the advice in this booklet at once. Instead, challenge yourself to add one more aspect to each of your projects. Remember, partially reproducible research is much better than completely non-reproducible research.</p>
+</blockquote>
+</div>
+<div id="my-journey" class="section level3">
+<h3>My Journey</h3>
+<p>This got me thinking about my own experience developing reproducible code in my own research. I didn’t set out initially to begin writing reproducible code. At the beginning of graduate school my code was a mess. I had scripts thrown into different folders, files with names like <code>calculations_final_actual.R</code>, and no clear sense of how to keep track of things. My first piece of reproducible coding came about due to a problem that I needed to solve. I wanted to calculate the Stark map of Rubidium, which is a fairly straightforward calculation with many smaller sub-problems to solve. The first step that entered my workflow was the mixture of using Git along with R Studio projects. Versioning allowed me to keep better track of my changes and easily return to early versions of the code if I came across problems down the line.</p>
+<p>Reproducible reports were the next piece to enter my workflow. The first time that I truly started to understand the use of this report format, particularly using R Markdown, was testing changes and permutations for a calculation. It allowed me to write out the narrative of what and why I was changing the code. I later started using reproducible reports for all of my analysis as it let me easily reproduce figures and distribute the analysis to my colleagues.</p>
+<p>There are still places that I can work on creating more reproducible code and I think the guide from the British Ecological Society does a great job of highlighting simple methods to encourage the production of reproducible code. I highly encourage scientists of all disciplines to think about reproducible code. Try getting your colleagues on board if you already create reproducible code. I agree with Roger Peng that reproducible coding is just a single step to solving the larger problems of reproducibility and replicability within the sciences, but I think it is an important step. For many researchers, reproducible code may be the first step they take to create a more rigorous research framework.</p>
+</div>
+
+      <footer class="entry-meta">
+          
+        <span class="entry-tags"><a href="/tags/#r" title="Pages tagged r" class="tag"><span class="term">r</span></a><a href="/tags/#data-science" title="Pages tagged data-science" class="tag"><span class="term">data-science</span></a></span>
+        
+        
+        
+      </footer>
+    </div>
+    
+  </article>
+</div>
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span> Powered by <a href="https://gohugo.io/" rel="nofollow">Hugo</a> and <a href = "https://github.com/rstudio/blogdown" rel = "nofollow"> blogdown </a> using the <a href="https://github.com/dldx/hpstr-hugo-theme" rel="nofollow">HPSTR</a> theme.</span>
+
+  </footer>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="\/js\/vendor\/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/js/scripts.min.js"></script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-109450627-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>
+
