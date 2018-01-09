@@ -1,0 +1,16 @@
+---
+title: Towards Reproducible Research
+author: Brian Richards
+date: '2018-01-09'
+slug: towards-reproducible-research
+categories:
+  - R
+  - Data Science
+tags:
+  - R
+  - Data Science
+draft: yes
+share: false
+comments: false
+---
+
