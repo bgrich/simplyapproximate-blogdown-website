@@ -1,0 +1,34 @@
+---
+title: Towards Reproducible Research
+author: Brian Richards
+date: '2018-01-09'
+slug: towards-reproducible-research
+categories:
+  - R
+  - Data Science
+tags:
+  - R
+  - Data Science
+draft: no
+share: false
+comments: false
+---
+
+
+
+<p>In December, I came across a <a href="http://www.britishecologicalsociety.org/publications/guides-to/">guide to reproducible code in ecology and evolution</a> published by the British Ecological Society. While my background is in physics research, I think the guide is incredibly useful for scientists of all disciplines. Reading through this guide also got me thinking about reproducibility in general and my own journey towards creating reproducible research.</p>
+<p>The British Ecological Society’s guide comes at a time when researchers across the various scientific disciplines are <a href="https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">discussing the importance of reproducibility</a>. This conversation has been prominent enough to <a href="https://fivethirtyeight.com/features/failure-is-moving-science-forward/">garner coverage in the media</a>. <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2015.00827.x/full">Roger Peng wrote an excellent paper in 2015</a> about the reproducibility crisis in the sciences that delved into what has happened and also provides a call to action to improve the global robustness of scientific data analysis.</p>
+<div id="the-guide" class="section level3">
+<h3>The Guide</h3>
+<p>What is actually in the guide? The guide covers a wide swath of reproducible code topics ranging from simple reproducible workflows, to suggestions for programming standards, to an introduction to versioning. Each section breaks down a particular topic and gives some examples of how to implement their suggestions in R. For instance, the section on Reproducible Reports gives a description of what reproducible reports are, why they are important, and then provides a brief guide to using R Markdown to create reproducible reports.</p>
+<p>One of the statements in the guide that I appreciated was the following reminder at the end of the introduction:</p>
+<blockquote>
+<p>True reproducibility is really hard. But do not let this put you off. We would not expect anyone to follow all of the advice in this booklet at once. Instead, challenge yourself to add one more aspect to each of your projects. Remember, partially reproducible research is much better than completely non-reproducible research.</p>
+</blockquote>
+</div>
+<div id="my-journey" class="section level3">
+<h3>My Journey</h3>
+<p>This got me thinking about my own experience developing reproducible code in my own research. I didn’t set out initially to begin writing reproducible code. At the beginning of graduate school my code was a mess. I had scripts thrown into different folders, files with names like <code>calculations_final_actual.R</code>, and no clear sense of how to keep track of things. My first piece of reproducible coding came about due to a problem that I needed to solve. I wanted to calculate the Stark map of Rubidium, which is a fairly straightforward calculation with many smaller sub-problems to solve. The first step that entered my workflow was the mixture of using Git along with R Studio projects. Versioning allowed me to keep better track of my changes and easily return to early versions of the code if I came across problems down the line.</p>
+<p>Reproducible reports were the next piece to enter my workflow. The first time that I truly started to understand the use of this report format, particularly using R Markdown, was testing changes and permutations for a calculation. It allowed me to write out the narrative of what and why I was changing the code. I later started using reproducible reports for all of my analysis as it let me easily reproduce figures and distribute the analysis to my colleagues.</p>
+<p>There are still places that I can work on creating more reproducible code and I think the guide from the British Ecological Society does a great job of highlighting simple methods to encourage the production of reproducible code. I highly encourage scientists of all disciplines to think about reproducible code. Try getting your colleagues on board if you already create reproducible code. I agree with Roger Peng that reproducible coding is just a single step to solving the larger problems of reproducibility and replicability within the sciences, but I think it is an important step. For many researchers, reproducible code may be the first step they take to create a more rigorous research framework.</p>
+</div>
