@@ -9,7 +9,7 @@ categories:
 tags:
   - R
   - Data Science
-draft: yes
+draft: no
 share: false
 comments: false
 ---
@@ -53,7 +53,7 @@ at the end of the introduction:
 This got me thinking about my own experience developing reproducible code in my 
 own research. I didn't set out initially to begin writing reproducible code. At 
 the beginning of graduate school my code was a mess. I had scripts thrown into 
-different folders, files with names like "calculations_final_actual.R", and no 
+different folders, files with names like `calculations_final_actual.R`, and no 
 clear sense of how to keep track of things. My first piece of reproducible 
 coding came about due to a problem that I needed to solve. I wanted to calculate 
 the Stark map of Rubidium, which is a fairly straightforward calculation with 
