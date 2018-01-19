@@ -18,3 +18,5 @@ moment.
 Simply Approximate is the idea that the models we create of the world are 
 merely the best approximations we can make. As such, our models are 
 constantly changing and updating as we receive new information.
+
+Profile Image Credit: [André Hilliard Photography](http://www.andrehilliard.com/)
