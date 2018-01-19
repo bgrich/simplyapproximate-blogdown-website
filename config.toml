@@ -14,6 +14,7 @@ googleAnalytics = "UA-109450627-1"
 		avatar = "/images/avatar.jpg"
 		bio = "Thoughts on Physics, Data Science, Games, Books, Dance, and Culture"
 		github = "bgrich/simplyapproximate-blogdown-website"
+		twitter = "@SimplyApprox"
 #	[params.image]
 #	  feature = "/images/abstract-1.jpg"
 #	  credit = "dargadgetz"
