@@ -57,25 +57,25 @@
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/data-science/</loc>
-    <lastmod>2018-01-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://www.simplyapproximate.com/tags/data-science/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/machine-learning/</loc>
-    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+    <loc>http://www.simplyapproximate.com/categories/data-science/</loc>
+    <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.simplyapproximate.com/tags/machine-learning/</loc>
+    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.simplyapproximate.com/categories/machine-learning/</loc>
     <lastmod>2017-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -87,25 +87,25 @@
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/r/</loc>
-    <lastmod>2018-01-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://www.simplyapproximate.com/tags/r/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/random-ramblings/</loc>
-    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+    <loc>http://www.simplyapproximate.com/categories/r/</loc>
+    <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.simplyapproximate.com/tags/random-ramblings/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.simplyapproximate.com/categories/random-ramblings/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -123,13 +123,13 @@
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/video-games/</loc>
+    <loc>http://www.simplyapproximate.com/tags/video-games/</loc>
     <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/video-games/</loc>
+    <loc>http://www.simplyapproximate.com/categories/video-games/</loc>
     <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
