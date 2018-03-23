@@ -14,7 +14,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 		name = "Brian Richards"
 		avatar = "/images/avatar.jpg"
 		bio = "Thoughts on Physics, Data Science, Games, Books, Dance, and Culture"
-		github = "bgrich/simplyapproximate-blogdown-website"
+		github = "bgrich"
 		twitter = "@SimplyApprox"
 		linkedin = "briangrichards"
 #	[params.image]
