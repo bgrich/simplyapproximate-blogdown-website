@@ -9,7 +9,7 @@ share: FALSE
 ---
 
 I am a Data Scientist, Physicist, and R enthusiast. These are my thoughts on 
-Physics, Data Science, games, books, dance, and culture. Expect an occasionally 
+physics, data science, games, books, dance, and culture. Expect an occasionally 
 updated collection of random ramblings on whatever holds my interest at the 
 moment.
 
