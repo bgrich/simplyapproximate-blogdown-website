@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Science on Simply Approximate</title>
-    <link>http://www.simplyapproximate.com/tags/data-science/</link>
+    <link>/tags/data-science/</link>
     <description>Recent content in Data Science on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.simplyapproximate.com/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Towards Reproducible Research</title>
-      <link>http://www.simplyapproximate.com/posts/towards-reproducible-research/</link>
+      <link>/posts/towards-reproducible-research/</link>
       <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/towards-reproducible-research/</guid>
+      <guid>/posts/towards-reproducible-research/</guid>
       <description>In December, I came across a guide to reproducible code in ecology and evolution published by the British Ecological Society. While my background is in physics research, I think the guide is incredibly useful for scientists of all disciplines. Reading through this guide also got me thinking about reproducibility in general and my own journey towards creating reproducible research.
 The British Ecological Society’s guide comes at a time when researchers across the various scientific disciplines are discussing the importance of reproducibility.</description>
     </item>
     
     <item>
       <title>Playing With The xray Package</title>
-      <link>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</link>
+      <link>/posts/playing-with-the-xray-package/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</guid>
+      <guid>/posts/playing-with-the-xray-package/</guid>
       <description>After seeing an announcement about it on R-Bloggers, I decided to test out the new xray package using the Titanic data set. The xray package provides a few functions for quickly getting a summary of anomalies and distributions of the variables in a data set. For anomalies, the anomalies() function outputs the number and percentage of NA’s, zeroes, empty strings, and infinities while also giving some useful information about distinct observations and variable class.</description>
     </item>
     
     <item>
       <title>Creating Harry Potter with Machine Learning</title>
-      <link>http://www.simplyapproximate.com/posts/creating-harry-potter-with-machine-learning/</link>
+      <link>/posts/creating-harry-potter-with-machine-learning/</link>
       <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/creating-harry-potter-with-machine-learning/</guid>
+      <guid>/posts/creating-harry-potter-with-machine-learning/</guid>
       <description>The other week I came across some work being done by Botnik and Botnik Studios to create strange new things with machine learning. The creation that caught my eye was a chapter for an entirely new Harry Potter book made using a predictive text algorithm like you might find attached to a cell phone keyboard. By training the algorithm on the text of Harry Potter they were able to produce new dialogue and narration that seemed like the original Harry Potter, but is completely new and bizarre.</description>
     </item>
     
     <item>
       <title>How I Started Using Computational Essays on Accident</title>
-      <link>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</link>
+      <link>/posts/how-i-started-using-computational-essays-on-accident/</link>
       <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</guid>
+      <guid>/posts/how-i-started-using-computational-essays-on-accident/</guid>
       <description>Recently, I came across a blog post by Tony Hirst on computational essays and how they can be used to facilitate learning. Hirst was reflecting on an earlier blog post by Stephen Wolfram on what defines a computational essay. Computational essays are, as paraphrased from Hirst and Wolfram, a mixture of plain language, computer input, and computer output allowing the user to interweave narrative with code and the output from that code.</description>
     </item>
     

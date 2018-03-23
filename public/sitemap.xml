@@ -3,150 +3,150 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/kaggle-s-sql-scavenger-hunt/</loc>
+    <loc>/posts/kaggle-s-sql-scavenger-hunt/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/towards-reproducible-research/</loc>
+    <loc>/posts/towards-reproducible-research/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</loc>
+    <loc>/posts/playing-with-the-xray-package/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/games-you-might-have-missed-in-2017/</loc>
+    <loc>/posts/games-you-might-have-missed-in-2017/</loc>
     <lastmod>2017-12-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/creating-harry-potter-with-machine-learning/</loc>
+    <loc>/posts/creating-harry-potter-with-machine-learning/</loc>
     <lastmod>2017-12-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/patreon-reverses-course/</loc>
+    <loc>/posts/patreon-reverses-course/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/patreon-problems-with-disaggregation/</loc>
+    <loc>/posts/patreon-problems-with-disaggregation/</loc>
     <lastmod>2017-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</loc>
+    <loc>/posts/how-i-started-using-computational-essays-on-accident/</loc>
     <lastmod>2017-12-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/datacamp-r-courses/</loc>
+    <loc>/posts/datacamp-r-courses/</loc>
     <lastmod>2017-11-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/re-launching-with-blogdown/</loc>
+    <loc>/posts/re-launching-with-blogdown/</loc>
     <lastmod>2017-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/about/</loc>
+    <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/data-science/</loc>
+    <loc>/tags/data-science/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/data-science/</loc>
+    <loc>/categories/data-science/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/machine-learning/</loc>
+    <loc>/tags/machine-learning/</loc>
     <lastmod>2017-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/machine-learning/</loc>
+    <loc>/categories/machine-learning/</loc>
     <lastmod>2017-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/random-ramblings/</loc>
+    <loc>/tags/random-ramblings/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/random-ramblings/</loc>
+    <loc>/categories/random-ramblings/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/</loc>
+    <loc>/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/sql/</loc>
+    <loc>/tags/sql/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/sql/</loc>
+    <loc>/categories/sql/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2018-01-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/categories/video-games/</loc>
+    <loc>/tags/video-games/</loc>
     <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.simplyapproximate.com/tags/video-games/</loc>
+    <loc>/categories/video-games/</loc>
     <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

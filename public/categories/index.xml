@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Simply Approximate</title>
-    <link>http://www.simplyapproximate.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://www.simplyapproximate.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Science</title>
-      <link>http://www.simplyapproximate.com/categories/data-science/</link>
+      <link>/categories/data-science/</link>
       <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/categories/data-science/</guid>
+      <guid>/categories/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>http://www.simplyapproximate.com/categories/machine-learning/</link>
+      <link>/categories/machine-learning/</link>
       <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/categories/machine-learning/</guid>
+      <guid>/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>http://www.simplyapproximate.com/categories/r/</link>
+      <link>/categories/r/</link>
       <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/categories/r/</guid>
+      <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Random Ramblings</title>
-      <link>http://www.simplyapproximate.com/categories/random-ramblings/</link>
+      <link>/categories/random-ramblings/</link>
       <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/categories/random-ramblings/</guid>
+      <guid>/categories/random-ramblings/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sql</title>
-      <link>http://www.simplyapproximate.com/categories/sql/</link>
+      <link>/categories/sql/</link>
       <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/categories/sql/</guid>
+      <guid>/categories/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Video Games</title>
-      <link>http://www.simplyapproximate.com/categories/video-games/</link>
+      <link>/categories/video-games/</link>
       <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/categories/video-games/</guid>
+      <guid>/categories/video-games/</guid>
       <description></description>
     </item>
     

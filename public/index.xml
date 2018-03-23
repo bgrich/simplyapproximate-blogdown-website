@@ -2,115 +2,115 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simply Approximate</title>
-    <link>http://www.simplyapproximate.com/</link>
+    <link>/</link>
     <description>Recent content on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.simplyapproximate.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kaggle&#39;s SQL Scavenger Hunt</title>
-      <link>http://www.simplyapproximate.com/posts/kaggle-s-sql-scavenger-hunt/</link>
+      <link>/posts/kaggle-s-sql-scavenger-hunt/</link>
       <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/kaggle-s-sql-scavenger-hunt/</guid>
+      <guid>/posts/kaggle-s-sql-scavenger-hunt/</guid>
       <description>Last month, I participated in Kaggle’s SQL Scavenger Hunt put together by Kaggle Data Preparation Analyst Rachel Tatman. The SQL Scavenger Hunt served as an introduction to SQL, BigQuery, and the Python package that Kaggle put together to link into their new BigQuery addition. There were 5 different tasks sent out over 5 days to answer some questions making use of SQL and BigQuery.
 Overall, I thought that the assignments were well written and helped guide me through the questions.</description>
     </item>
     
     <item>
       <title>Towards Reproducible Research</title>
-      <link>http://www.simplyapproximate.com/posts/towards-reproducible-research/</link>
+      <link>/posts/towards-reproducible-research/</link>
       <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/towards-reproducible-research/</guid>
+      <guid>/posts/towards-reproducible-research/</guid>
       <description>In December, I came across a guide to reproducible code in ecology and evolution published by the British Ecological Society. While my background is in physics research, I think the guide is incredibly useful for scientists of all disciplines. Reading through this guide also got me thinking about reproducibility in general and my own journey towards creating reproducible research.
 The British Ecological Society’s guide comes at a time when researchers across the various scientific disciplines are discussing the importance of reproducibility.</description>
     </item>
     
     <item>
       <title>Playing With The xray Package</title>
-      <link>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</link>
+      <link>/posts/playing-with-the-xray-package/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</guid>
+      <guid>/posts/playing-with-the-xray-package/</guid>
       <description>After seeing an announcement about it on R-Bloggers, I decided to test out the new xray package using the Titanic data set. The xray package provides a few functions for quickly getting a summary of anomalies and distributions of the variables in a data set. For anomalies, the anomalies() function outputs the number and percentage of NA’s, zeroes, empty strings, and infinities while also giving some useful information about distinct observations and variable class.</description>
     </item>
     
     <item>
       <title>Games You Might Have Missed In 2017</title>
-      <link>http://www.simplyapproximate.com/posts/games-you-might-have-missed-in-2017/</link>
+      <link>/posts/games-you-might-have-missed-in-2017/</link>
       <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/games-you-might-have-missed-in-2017/</guid>
+      <guid>/posts/games-you-might-have-missed-in-2017/</guid>
       <description>I am always interested in hearing about things that are incredibly influential to my friends. Considering how many books, video games, movies, TV shows, and other pieces of culture are created in a year it is easy to miss something. As such, here is a small list of video games that either came out in 2017 or that I played in 2017 that I think could be easily missed and are quite wonderful.</description>
     </item>
     
     <item>
       <title>Creating Harry Potter with Machine Learning</title>
-      <link>http://www.simplyapproximate.com/posts/creating-harry-potter-with-machine-learning/</link>
+      <link>/posts/creating-harry-potter-with-machine-learning/</link>
       <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/creating-harry-potter-with-machine-learning/</guid>
+      <guid>/posts/creating-harry-potter-with-machine-learning/</guid>
       <description>The other week I came across some work being done by Botnik and Botnik Studios to create strange new things with machine learning. The creation that caught my eye was a chapter for an entirely new Harry Potter book made using a predictive text algorithm like you might find attached to a cell phone keyboard. By training the algorithm on the text of Harry Potter they were able to produce new dialogue and narration that seemed like the original Harry Potter, but is completely new and bizarre.</description>
     </item>
     
     <item>
       <title>Patreon Reverses Course</title>
-      <link>http://www.simplyapproximate.com/posts/patreon-reverses-course/</link>
+      <link>/posts/patreon-reverses-course/</link>
       <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/patreon-reverses-course/</guid>
+      <guid>/posts/patreon-reverses-course/</guid>
       <description>A quick update on what is going on over at Patreon after the announcement last week of changes to their subscription methods and service fees. In a surprising reversal of position, Patreon has decided to not roll out their planned changes. This reversal will keep in place the current system while they find a way forward that allows Patreon to fix the problems that prompted the changes in the first place.</description>
     </item>
     
     <item>
       <title>Patreon: Problems with Disaggregation</title>
-      <link>http://www.simplyapproximate.com/posts/patreon-problems-with-disaggregation/</link>
+      <link>/posts/patreon-problems-with-disaggregation/</link>
       <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/patreon-problems-with-disaggregation/</guid>
+      <guid>/posts/patreon-problems-with-disaggregation/</guid>
       <description>On December 8th, 2017, I noticed that my Twitter feed was blowing up about the new changes coming to Patreon. The big change that has people nervous is this: starting in late December, Patreon patrons will have to start paying for credit card service fees. This is a change over the previous system where all fees were taken out of the amount the creator received directly. While overall a switch to charging the patrons the transaction fees doesn’t seem like a huge change, the deeper change of interest (to me) is the disaggregation of the transaction fees.</description>
     </item>
     
     <item>
       <title>How I Started Using Computational Essays on Accident</title>
-      <link>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</link>
+      <link>/posts/how-i-started-using-computational-essays-on-accident/</link>
       <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</guid>
+      <guid>/posts/how-i-started-using-computational-essays-on-accident/</guid>
       <description>Recently, I came across a blog post by Tony Hirst on computational essays and how they can be used to facilitate learning. Hirst was reflecting on an earlier blog post by Stephen Wolfram on what defines a computational essay. Computational essays are, as paraphrased from Hirst and Wolfram, a mixture of plain language, computer input, and computer output allowing the user to interweave narrative with code and the output from that code.</description>
     </item>
     
     <item>
       <title>DataCamp R Courses</title>
-      <link>http://www.simplyapproximate.com/posts/datacamp-r-courses/</link>
+      <link>/posts/datacamp-r-courses/</link>
       <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/datacamp-r-courses/</guid>
+      <guid>/posts/datacamp-r-courses/</guid>
       <description>Back in September I finished the Data Scientist (with R) career path from DataCamp. This career path is a series of 23 online courses that start with a general introduction to R, introduce the important functions and packages for modern R usage, and give a sampling of machine learning techniques. Along the way, these courses introduce data analysis concepts that go beyond the specifics of how to code in R.</description>
     </item>
     
     <item>
       <title>Re-launching with Blogdown</title>
-      <link>http://www.simplyapproximate.com/posts/re-launching-with-blogdown/</link>
+      <link>/posts/re-launching-with-blogdown/</link>
       <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/re-launching-with-blogdown/</guid>
+      <guid>/posts/re-launching-with-blogdown/</guid>
       <description>Welcome to the latest version of Simply Approximate! Over the the last few years I’ve had grand plans to make use of this site. Alas, work and other concerns have prevented me from posting anything and getting this blog off the ground. But now is the time! To give the blog a fresh start, I’ve decided to re-build the site and re-launch it using Blogdown.
 Blogdown is package for R created by Yihui Xie that allows for the creation and maintain of a website inside of R Studio.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://www.simplyapproximate.com/about/</link>
+      <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/about/</guid>
-      <description>I am a Data Scientist, Physicist, and R enthusiast. These are my thoughts on Physics, Data Science, games, books, dance, and culture. Expect an occasionally updated collection of random ramblings on whatever holds my interest at the moment.
+      <guid>/about/</guid>
+      <description>I am a Data Scientist, Physicist, and R enthusiast. These are my thoughts on physics, data science, games, books, dance, and culture. Expect an occasionally updated collection of random ramblings on whatever holds my interest at the moment.
 What do I mean by Simply Approximate?Simply Approximate is the idea that the models we create of the world are merely the best approximations we can make. As such, our models are constantly changing and updating as we receive new information.</description>
     </item>
     

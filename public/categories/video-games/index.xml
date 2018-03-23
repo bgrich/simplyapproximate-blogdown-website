@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Video Games on Simply Approximate</title>
-    <link>http://www.simplyapproximate.com/categories/video-games/</link>
+    <link>/categories/video-games/</link>
     <description>Recent content in Video Games on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 31 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.simplyapproximate.com/categories/video-games/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/video-games/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Games You Might Have Missed In 2017</title>
-      <link>http://www.simplyapproximate.com/posts/games-you-might-have-missed-in-2017/</link>
+      <link>/posts/games-you-might-have-missed-in-2017/</link>
       <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.simplyapproximate.com/posts/games-you-might-have-missed-in-2017/</guid>
+      <guid>/posts/games-you-might-have-missed-in-2017/</guid>
       <description>I am always interested in hearing about things that are incredibly influential to my friends. Considering how many books, video games, movies, TV shows, and other pieces of culture are created in a year it is easy to miss something. As such, here is a small list of video games that either came out in 2017 or that I played in 2017 that I think could be easily missed and are quite wonderful.</description>
     </item>
     
