@@ -10,14 +10,36 @@ tags:
 draft: yes
 ---
 
-A month ago I asked the #rstats community on Twitter what their favorite package vignette was. While working on a "getting started" vignette myself I realized that I wanted to increase the number of examples I could reference. After not getting much in the way of responses, I thought it would be a great time to put together my own list of favorite R package vignettes.
+A month ago I asked the #rstats community on Twitter what their favorite 
+package vignette was. While working on a "getting started" vignette myself I 
+realized that I wanted to increase the number of examples I could reference. 
+After not getting much in the way of responses, I thought it would be a great 
+time to put together my own list of favorite R package vignettes.
 
-As described by Hadley Wickham in R Packages:
+As described by Hadley Wickham in [R Packages](http://r-pkgs.had.co.nz/vignettes.html):
 
-"A vignette is a long-form guide to your package. Function documentation is great if you know the name of the function you need, but it’s useless otherwise. A vignette is like a book chapter or an academic paper: it can describe the problem that your package is designed to solve, and then show the reader how to solve it."
+> "A vignette is a long-form guide to your package. Function documentation is 
+> great if you know the name of the function you need, but it’s useless 
+> otherwise. A vignette is like a book chapter or an academic paper: it can 
+> describe the problem that your package is designed to solve, and then show the 
+> reader how to solve it."
 
-After looking through a number of packages, I settled on the [Introduction to dplyr]() vignette from [dplyr]() and the [Introduction to dbplyr]() from [dbplyr](). These are both really complimentary vignettes as dbplyr extends the functionality of dplyr to databases outside of R. I love the way that both of these vignettes show in a clear and concise manner the purpose of the package and how to get started with it. The code examples given let the user easily start playing with the package and discover how to use it for themselves. 
+After looking through a number of packages, I settled on the 
+[Introduction to dplyr](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) 
+vignette from [dplyr](https://dplyr.tidyverse.org/) and the 
+[Introduction to dbplyr](https://cran.r-project.org/web/packages/dbplyr/vignettes/dbplyr.html) 
+from [dbplyr](https://github.com/tidyverse/dbplyr). These are both really 
+complimentary vignettes as dbplyr extends the functionality of dplyr to 
+databases outside of R. I love the way that both of these vignettes show in a 
+clear and concise manner the purpose of the package and how to get started with 
+it. The code examples given let the user easily start playing with the package 
+and discover how to use it for themselves. 
 
-Of course, not every package has a vignette. Many packages are making use of web-hosted books for documentation like [bookdown](). More involved then a vignette, documentation like bookdown's is a great way to get started using the full features of the packages and also gives a useful way to search for specific topics.
+Of course, not every package has a vignette. Many packages are making use of 
+web-hosted books for documentation like [bookdown](https://bookdown.org/yihui/bookdown/). 
+More involved then a vignette, documentation like bookdown's is a great way to 
+get started using the full features of the packages and also gives a useful way 
+to search for specific topics.
 
-Do you have a favorite vignette or piece of documentation? Feel free to tell me about it on Twitter ([@SimplyApprox]()). 
+Do you have a favorite vignette or piece of documentation? Feel free to tell me 
+about it on [Twitter (\@SimplyApprox)](https://twitter.com/SimplyApprox). 
