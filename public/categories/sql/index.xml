@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on Simply Approximate</title>
-    <link>/categories/sql/</link>
+    <link>http://www.simplyapproximate.com/categories/sql/</link>
     <description>Recent content in Sql on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/sql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.simplyapproximate.com/categories/sql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kaggle&#39;s SQL Scavenger Hunt</title>
-      <link>/posts/kaggle-s-sql-scavenger-hunt/</link>
+      <link>http://www.simplyapproximate.com/posts/kaggle-s-sql-scavenger-hunt/</link>
       <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/kaggle-s-sql-scavenger-hunt/</guid>
+      <guid>http://www.simplyapproximate.com/posts/kaggle-s-sql-scavenger-hunt/</guid>
       <description>Last month, I participated in Kaggle’s SQL Scavenger Hunt put together by Kaggle Data Preparation Analyst Rachel Tatman. The SQL Scavenger Hunt served as an introduction to SQL, BigQuery, and the Python package that Kaggle put together to link into their new BigQuery addition. There were 5 different tasks sent out over 5 days to answer some questions making use of SQL and BigQuery.
 Overall, I thought that the assignments were well written and helped guide me through the questions.</description>
     </item>

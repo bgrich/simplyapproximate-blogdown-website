@@ -2,58 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Simply Approximate</title>
-    <link>/tags/r/</link>
+    <link>http://www.simplyapproximate.com/tags/r/</link>
     <description>Recent content in R on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.simplyapproximate.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>What makes a good R vignette?</title>
+      <link>http://www.simplyapproximate.com/posts/what-makes-a-good-r-vignette/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/what-makes-a-good-r-vignette/</guid>
+      <description>A month ago I asked the #rstats community on Twitter what their favorite package vignette was. While working on a “getting started” vignette myself I realized that I wanted to increase the number of examples I could reference. After not getting much in the way of responses, I thought it would be a great time to put together my own list of favorite R package vignettes.
+As described by Hadley Wickham in R Packages:</description>
+    </item>
+    
+    <item>
       <title>Towards Reproducible Research</title>
-      <link>/posts/towards-reproducible-research/</link>
+      <link>http://www.simplyapproximate.com/posts/towards-reproducible-research/</link>
       <pubDate>Tue, 09 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/towards-reproducible-research/</guid>
+      <guid>http://www.simplyapproximate.com/posts/towards-reproducible-research/</guid>
       <description>In December, I came across a guide to reproducible code in ecology and evolution published by the British Ecological Society. While my background is in physics research, I think the guide is incredibly useful for scientists of all disciplines. Reading through this guide also got me thinking about reproducibility in general and my own journey towards creating reproducible research.
 The British Ecological Society’s guide comes at a time when researchers across the various scientific disciplines are discussing the importance of reproducibility.</description>
     </item>
     
     <item>
       <title>Playing With The xray Package</title>
-      <link>/posts/playing-with-the-xray-package/</link>
+      <link>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/playing-with-the-xray-package/</guid>
+      <guid>http://www.simplyapproximate.com/posts/playing-with-the-xray-package/</guid>
       <description>After seeing an announcement about it on R-Bloggers, I decided to test out the new xray package using the Titanic data set. The xray package provides a few functions for quickly getting a summary of anomalies and distributions of the variables in a data set. For anomalies, the anomalies() function outputs the number and percentage of NA’s, zeroes, empty strings, and infinities while also giving some useful information about distinct observations and variable class.</description>
     </item>
     
     <item>
       <title>How I Started Using Computational Essays on Accident</title>
-      <link>/posts/how-i-started-using-computational-essays-on-accident/</link>
+      <link>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</link>
       <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/how-i-started-using-computational-essays-on-accident/</guid>
+      <guid>http://www.simplyapproximate.com/posts/how-i-started-using-computational-essays-on-accident/</guid>
       <description>Recently, I came across a blog post by Tony Hirst on computational essays and how they can be used to facilitate learning. Hirst was reflecting on an earlier blog post by Stephen Wolfram on what defines a computational essay. Computational essays are, as paraphrased from Hirst and Wolfram, a mixture of plain language, computer input, and computer output allowing the user to interweave narrative with code and the output from that code.</description>
     </item>
     
     <item>
       <title>DataCamp R Courses</title>
-      <link>/posts/datacamp-r-courses/</link>
+      <link>http://www.simplyapproximate.com/posts/datacamp-r-courses/</link>
       <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/datacamp-r-courses/</guid>
+      <guid>http://www.simplyapproximate.com/posts/datacamp-r-courses/</guid>
       <description>Back in September I finished the Data Scientist (with R) career path from DataCamp. This career path is a series of 23 online courses that start with a general introduction to R, introduce the important functions and packages for modern R usage, and give a sampling of machine learning techniques. Along the way, these courses introduce data analysis concepts that go beyond the specifics of how to code in R.</description>
     </item>
     
     <item>
       <title>Re-launching with Blogdown</title>
-      <link>/posts/re-launching-with-blogdown/</link>
+      <link>http://www.simplyapproximate.com/posts/re-launching-with-blogdown/</link>
       <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/re-launching-with-blogdown/</guid>
+      <guid>http://www.simplyapproximate.com/posts/re-launching-with-blogdown/</guid>
       <description>Welcome to the latest version of Simply Approximate! Over the the last few years I’ve had grand plans to make use of this site. Alas, work and other concerns have prevented me from posting anything and getting this blog off the ground. But now is the time! To give the blog a fresh start, I’ve decided to re-build the site and re-launch it using Blogdown.
 Blogdown is package for R created by Yihui Xie that allows for the creation and maintain of a website inside of R Studio.</description>
     </item>

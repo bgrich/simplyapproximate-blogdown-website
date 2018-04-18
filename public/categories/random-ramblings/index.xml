@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Random Ramblings on Simply Approximate</title>
-    <link>/categories/random-ramblings/</link>
+    <link>http://www.simplyapproximate.com/categories/random-ramblings/</link>
     <description>Recent content in Random Ramblings on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/random-ramblings/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.simplyapproximate.com/categories/random-ramblings/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Patreon Reverses Course</title>
-      <link>/posts/patreon-reverses-course/</link>
+      <link>http://www.simplyapproximate.com/posts/patreon-reverses-course/</link>
       <pubDate>Wed, 13 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/patreon-reverses-course/</guid>
+      <guid>http://www.simplyapproximate.com/posts/patreon-reverses-course/</guid>
       <description>A quick update on what is going on over at Patreon after the announcement last week of changes to their subscription methods and service fees. In a surprising reversal of position, Patreon has decided to not roll out their planned changes. This reversal will keep in place the current system while they find a way forward that allows Patreon to fix the problems that prompted the changes in the first place.</description>
     </item>
     
     <item>
       <title>Patreon: Problems with Disaggregation</title>
-      <link>/posts/patreon-problems-with-disaggregation/</link>
+      <link>http://www.simplyapproximate.com/posts/patreon-problems-with-disaggregation/</link>
       <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/posts/patreon-problems-with-disaggregation/</guid>
+      <guid>http://www.simplyapproximate.com/posts/patreon-problems-with-disaggregation/</guid>
       <description>On December 8th, 2017, I noticed that my Twitter feed was blowing up about the new changes coming to Patreon. The big change that has people nervous is this: starting in late December, Patreon patrons will have to start paying for credit card service fees. This is a change over the previous system where all fees were taken out of the amount the creator received directly. While overall a switch to charging the patrons the transaction fees doesn’t seem like a huge change, the deeper change of interest (to me) is the disaggregation of the transaction fees.</description>
     </item>
     
