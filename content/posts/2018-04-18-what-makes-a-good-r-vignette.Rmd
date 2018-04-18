@@ -7,7 +7,9 @@ categories:
   - R
 tags:
   - R
-draft: yes
+draft: no
+share: false
+comments: false
 ---
 
 A month ago I asked the #rstats community on Twitter what their favorite 
