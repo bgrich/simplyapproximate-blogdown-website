@@ -1,0 +1,12 @@
+---
+title: What makes a good R vignette?
+author: Brian Richards
+date: '2018-04-18'
+slug: what-makes-a-good-r-vignette
+categories:
+  - R
+tags:
+  - R
+draft: yes
+---
+
