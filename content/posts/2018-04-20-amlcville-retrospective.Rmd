@@ -24,7 +24,7 @@ analysis.
 
 I spent most of my time in the general interest sessions and attended the 
 keynotes. The two big highlights for me were the keynote given by David Luebke 
-of Nvidia on _Deep Learning and Computer Graphics_ and the talk by Renee Teate 
+of Nvidia on _Deep Learning and Computer Graphics_ and the talk by Renée Teate 
 of HelioCampus on bias in machine learning titled _Can a Machine be Racist or Sexist?_ 
 
 ![Title slide from David Luebke's keynote _Deep Learning and Computer Graphics_](/images/20180412_Deep_Learning_and_Graphics.jpg)
@@ -40,10 +40,10 @@ technology could be applied to games in the future. I can imagine that
 localizing games into new languages would benefit from the technology and 
 hopefully lower the bar for localizations.
 
-![Title slide from Renee Teate's talk _Can a Machine be Racist or Sexist?_](/images/20180412_Bias_in_ML.jpg)
+![Title slide from Renée Teate's talk _Can a Machine be Racist or Sexist?_](/images/20180412_Bias_in_ML.jpg)
 
-Renee Teate's talk gave an overview of the different ways that bias can impact 
-machine learning. After her talk, Renee Teate moderated a panel discussion on 
+Renée Teate's talk gave an overview of the different ways that bias can impact 
+machine learning. After her talk, Renée Teate moderated a panel discussion on 
 bias in machine learning with a few of the other speakers that day. I think my 
 favorite line came during the panel in which one of the panelists (Ines Montani 
 I believe) reframed the often quoted phrase "your model is only as good as your 
