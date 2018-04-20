@@ -14,7 +14,7 @@ comments: false
 share: false
 ---
 
-On April 12th, Charlottesville and the Tom Tom Founders Festival played host to 
+On April 12th, 2018, Charlottesville and the Tom Tom Founders Festival played host to 
 the second annual Applied Machine Learning Conference (AMLCville). I had the 
 fortune to attend AMLCville and listen to talks on a wide range of topics and 
 get to see the amazing ways that machine learning is being used out in the 
