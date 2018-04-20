@@ -27,6 +27,8 @@ keynotes. The two big highlights for me were the keynote given by David Luebke
 of Nvidia on _Deep Learning and Computer Graphics_ and the talk by Renee Teate 
 of HelioCampus on bias in machine learning titled _Can a Machine be Racist or Sexist?_ 
 
+![Title slide from David Luebke's keynote _Deep Learning and Computer Graphics_](/images/20180412_Deep_Learning_and_Graphics.jpg)
+
 David Luebke's keynote gave an overview of the work Nvidia has been doing using 
 deep learning for computer graphics. One of the examples that stood out to me 
 was producing new mouth animations using audio files. By training a deep 
