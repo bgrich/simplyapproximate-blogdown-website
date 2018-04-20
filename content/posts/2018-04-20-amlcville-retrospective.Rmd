@@ -14,3 +14,41 @@ comments: false
 share: false
 ---
 
+On April 12th, Charlottesville and the Tom Tom Founders Festival played host to 
+the second annual Applied Machine Learning Conference (AMLCville). I had the 
+fortune to attend AMLCville and listen to talks on a wide range of topics and 
+get to see the amazing ways that machine learning is being used out in the 
+world. AMLCville was split into three different tracks with topic sessions on 
+natural language processing, health care, computer vision, and geospatial 
+analysis. 
+
+I spent most of my time in the general interest sessions and attended the 
+keynotes. The two big highlights for me were the keynote given by David Luebke 
+of Nvidia on _Deep Learning and Computer Graphics_ and the talk by Renee Teate 
+of HelioCampus on bias in machine learning titled _Can a Machine be Racist or Sexist?_ 
+
+David Luebke's keynote gave an overview of the work Nvidia has been doing using 
+deep learning for computer graphics. One of the examples that stood out to me 
+was producing new mouth animations using audio files. By training a deep 
+learning model using audio and motion capture, they were able to produce new 
+mouth animations using only new audio files. While the new mouth animations 
+weren't perfect, they went a long way to making the animated figure look like 
+they were saying the words coming from the audio. I can't wait to see how this 
+technology could be applied to games in the future. I can imagine that 
+localizing games into new languages would benefit from the technology and 
+hopefully lower the bar for localizations.
+
+Renee Teate's talk gave an overview of the different ways that bias can impact 
+machine learning. After her talk, Renee Teate moderated a panel discussion on 
+bias in machine learning with a few of the other speakers that day. I think my 
+favorite line came during the panel in which one of the panelists (Ines Montani 
+I believe) reframed the often quoted phrase "your model is only as good as your 
+data" as "your model can often be much worse than your data." A good reminder 
+that, when building models, we need to make sure the model makes sense in 
+addition to the data being good.
+
+I'm quite excited to see data science and machine learning grow in 
+Charlottesville. Since graduating and starting to dive into the data science 
+community, it has been incredibly useful to have such a great resource within 
+arms reach. Thank you to all of the organizers and speakers for putting on such 
+a great conference!
