@@ -40,6 +40,8 @@ technology could be applied to games in the future. I can imagine that
 localizing games into new languages would benefit from the technology and 
 hopefully lower the bar for localizations.
 
+![Title slide from Renee Teate's talk _Can a Machine be Racist or Sexist?_](/images/20180412_Bias_in_ML.jpg)
+
 Renee Teate's talk gave an overview of the different ways that bias can impact 
 machine learning. After her talk, Renee Teate moderated a panel discussion on 
 bias in machine learning with a few of the other speakers that day. I think my 
