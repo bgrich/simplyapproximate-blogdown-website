@@ -1,0 +1,14 @@
+---
+title: AMLCville Retrospective
+author: Brian Richards
+date: '2018-04-20'
+slug: amlcville-retrospective
+categories:
+  - Machine Learning
+  - Data Science
+tags:
+  - Machine Learning
+  - Data Science
+draft: yes
+---
+
