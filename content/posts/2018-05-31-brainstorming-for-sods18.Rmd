@@ -1,0 +1,14 @@
+---
+title: 'Brainstorming for #SoDS18'
+author: Brian Richards
+date: '2018-05-31'
+slug: brainstorming-for-sods18
+categories:
+  - Data Science
+tags:
+  - Data Science
+comments: false
+share: false
+draft: no
+---
+
