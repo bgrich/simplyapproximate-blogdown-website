@@ -6,10 +6,19 @@
     <description>Recent content in Data Science on Simply Approximate</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.simplyapproximate.com/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Brainstorming for #SoDS18</title>
+      <link>http://www.simplyapproximate.com/posts/brainstorming-for-sods18/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.simplyapproximate.com/posts/brainstorming-for-sods18/</guid>
+      <description>Starting earlier this week, I decided to participate in the Summer of Data Science 2018 (#SoDS18)! Now that we are into June, I wanted to put up my first post about the Summer of Data Science and my plans. The first week is supposed to be spent brainstorming and looking up resources, so here are some of my ideas. Starting in week 2, I will be narrowing down my focus and making up a plan for the rest of the Summer.</description>
+    </item>
     
     <item>
       <title>AMLCville Retrospective</title>
