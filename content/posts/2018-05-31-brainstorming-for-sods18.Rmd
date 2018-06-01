@@ -12,3 +12,24 @@ share: false
 draft: no
 ---
 
+Starting earlier this week, I decided to particpate in the 
+[Summer of Data Science 2018 (#SoDS18)](https://www.becomingadatascientist.com/2018/05/28/summer-of-data-science-2018-sods18-launch-day/)!
+Now that we are into June, I wanted to put up my first post about the Summer of
+Data Science and my plans. The first week is supposed to be spent brainstorming 
+and looking up resources, so here are some of my ideas. Starting in week 2, I 
+will be nearrowing down my focus and making up a plan for the rest of the 
+Summer.
+
+# Topics
+
+## Shiny
+
+One of the big things I want to work on is learning how R Shiny works. After 
+having done a few R Shiny courses through DataCamp, I am going to work on an 
+R Shiny app/dashboard from scratch. One of the side goals of this is to play 
+around with some video game data, particularly the data from the 
+[Elite: Dangerous Database](https://eddb.io/). Some of the resources I found 
+for this include the DataCamp Shiny courses that I took as references and 
+the official [R Shiny documentation and website](https://shiny.rstudio.com/). 
+
+## 
