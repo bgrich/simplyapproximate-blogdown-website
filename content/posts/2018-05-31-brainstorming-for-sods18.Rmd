@@ -30,4 +30,53 @@ around with some video game data, particularly the data from the
 for this include the DataCamp Shiny courses that I took as references and 
 the official [R Shiny documentation and website](https://shiny.rstudio.com/). 
 
-## 
+## Machine Learning
+
+I've had some work on the Titanic data set machine learning competition at 
+[Kaggle](https://www.kaggle.com/) sitting around for a while and I really want 
+to dive into modeling that data set. One of the main things I want to do is 
+really practice with a number of different models and get a better sense of how 
+to tune them
+
+## Deep Learning
+
+I've been sitting on a copy of 
+[Deep Learning with R](https://www.manning.com/books/deep-learning-with-r) for 
+several months now. Getting through the book and implementing some deep learning 
+algorithms (possibly in the previous ML competition) is another target.
+
+## Containers and Docker
+
+After hearing people talk about containers and Docker for months, I want to 
+learn more about it. A quick search pulled up a couple of resources like the 
+[Docker website](https://www.docker.com/), 
+[the Rocker paper from the R journal](https://journal.r-project.org/archive/2017/RJ-2017-065/index.html), 
+the [Rocker docs](https://github.com/rocker-org/rocker), 
+and [various](https://github.com/rocker-org/rocker/wiki/Tutorials:-Getting-Started) 
+[tutorials](https://github.com/BillMills/Rocker-tutorial).
+
+## GIS and Mapping
+
+Since my Physics program didn't have much use for GIS and mapping, I know 
+relatively little about it. So I want to play with the parking data from the 
+[Charlottesville Open Data Portal](http://opendata.charlottesville.org/) and 
+work on an understanding of mapping data. This is also likely a good chance to 
+make a Shiny app.
+
+## Other Dashboard and Visualization Apps
+
+Most of the job ads I've seen recently mention other applications for developing 
+dashboards like Tableau and D3.js. If I have time, I would like to start building 
+up skills in both of these using a 
+[few](https://www.tableau.com/learn/tutorials/on-demand/introduction-tableau) 
+[tutorials](https://square.github.io/intro-to-d3/) that I found.
+
+## Testing 
+
+Understanding unit testing has been pretty high on my list for a while. 
+Particularly, I want to better understand how unit testing can be used when 
+developing R packages that interact with APIs that require authentication. Some 
+of the resources I've found for that include a number of 
+[articles](https://itsalocke.com/blog/some-web-api-package-development-lessons-from-hibpwned/), 
+[package documentation](https://ropensci.org/technotes/2018/05/25/vcr-http-request-cacahing/), 
+and [a book on testing http requests](https://ropensci.github.io/http-testing-book/).
