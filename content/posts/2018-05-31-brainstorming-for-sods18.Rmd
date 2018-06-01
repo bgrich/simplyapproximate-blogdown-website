@@ -12,12 +12,12 @@ share: false
 draft: no
 ---
 
-Starting earlier this week, I decided to particpate in the 
+Starting earlier this week, I decided to participate in the 
 [Summer of Data Science 2018 (#SoDS18)](https://www.becomingadatascientist.com/2018/05/28/summer-of-data-science-2018-sods18-launch-day/)!
 Now that we are into June, I wanted to put up my first post about the Summer of
 Data Science and my plans. The first week is supposed to be spent brainstorming 
 and looking up resources, so here are some of my ideas. Starting in week 2, I 
-will be nearrowing down my focus and making up a plan for the rest of the 
+will be narrowing down my focus and making up a plan for the rest of the 
 Summer.
 
 ## Shiny
@@ -36,14 +36,14 @@ I've had some work on the Titanic data set machine learning competition at
 [Kaggle](https://www.kaggle.com/) sitting around for a while and I really want 
 to dive into modeling that data set. One of the main things I want to do is 
 really practice with a number of different models and get a better sense of how 
-to tune them
+to tune them.
 
 ## Deep Learning
 
 I've been sitting on a copy of 
 [Deep Learning with R](https://www.manning.com/books/deep-learning-with-r) for 
 several months now. Getting through the book and implementing some deep learning 
-algorithms (possibly in the previous ML competition) is another target.
+algorithms (possibly in the previously mentioned ML competition) is another target.
 
 ## Containers and Docker
 
