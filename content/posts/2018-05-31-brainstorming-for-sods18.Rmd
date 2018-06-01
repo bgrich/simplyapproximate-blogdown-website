@@ -1,7 +1,7 @@
 ---
 title: 'Brainstorming for #SoDS18'
 author: Brian Richards
-date: '2018-05-31'
+date: '2018-06-01'
 slug: brainstorming-for-sods18
 categories:
   - Data Science
