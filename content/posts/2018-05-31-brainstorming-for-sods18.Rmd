@@ -20,8 +20,6 @@ and looking up resources, so here are some of my ideas. Starting in week 2, I
 will be nearrowing down my focus and making up a plan for the rest of the 
 Summer.
 
-# Topics
-
 ## Shiny
 
 One of the big things I want to work on is learning how R Shiny works. After 
