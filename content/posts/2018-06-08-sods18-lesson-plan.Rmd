@@ -35,3 +35,23 @@ Onto the lesson plan. In which Brian realizes he doesn't know what he is doing!
 
 ## R Shiny 
 
+As I stated in my previous post, I want to build an R Shiny app that makes use 
+of some video game data. Particularly, making use of the Elite: Dangerous 
+Database (EDDB). Here is my plan on how to tackle this project this summer. The 
+following list will be my intended deadlines followed by my goals.
+
+* 6/12: Explore EDDB for fun data to work with.
+* 6/12: Do some data exploration of the data set and figure out what I can make.
+* 6/14: Outline what I want the app to do.
+* 6/19: Read through the lessons/tutorials/manuals on the R Shiny site.
+* 6/21: Create rough draft of the app layout.
+* **6/26: Build first draft of the app.**
+* 6/27: Upload draft to shinyapps.io
+* 7/2: Tweak app with suggestions.
+* 7/2: Play with layout.
+* **7/6: Publish "final" version with a blog post.**
+
+
+
+
+
