@@ -51,7 +51,37 @@ following list will be my intended deadlines followed by my goals.
 * 7/2: Play with layout.
 * **7/6: Publish "final" version with a blog post.**
 
+## Machine Learning Competition
 
+My next summer project is going to be completing a machine learning competition 
+on Kaggle. Since I've already done a little bit of work on this, the start of 
+it should be a little easier. I plan to do most of this work on Kaggle itself 
+and release all of that work as a set of Kaggle kernels.
 
+* 7/10: Do data exploration of Titanic data.
+* 7/13: Develop cleaning and preparation pipeline.
+* **7/17: Research different classifications models to use.**
+* 7/19: Implement a glm model using caret.
+* **7/23: Implement other models for comparison.**
+* 7/25: Visualize model results.
+* **7/27: Submit best model for scoring.**
+* 7/31: Publish kernel's and blog post with results.
 
+## Deep Learning
 
+This is probably the simplest and most complicated goal I have for the summer. 
+After picking up Deep Learning for R several months ago, I want to finally read 
+it and make use of deep learning in a model.
+
+* 8/22: Read *Deep Learning for R*
+* 9/3: Implement a deep learning model in the previous ML competition.
+
+I'm not sure how long all of these projects will take. Some of them might take 
+longer than I planned. Some of them may go faster than I've planned. Should I 
+make it through everything, I'll probably do a second set of planning and pull 
+out some of the projects that didn't make it into the top 3.
+
+If you want to stay updated on my progress, keep an eye on my Twitter account. 
+Otherwise, I will be updating the blog near the conclusion of each project, 
+though I may post something earlier if I come across anything particularly 
+interesting.
