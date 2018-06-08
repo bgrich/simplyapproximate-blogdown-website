@@ -25,5 +25,9 @@ over the 3 months of #SoDS18. These goals are:
 2. Complete a machine learning competition (and implement multiple models)
 3. Learn about deep learning and implement a deep learning model
 
+```{r}
+blogdown::shortcode("tweet", "1005139686795497473")
+```
+
 ## R Shiny 
 
