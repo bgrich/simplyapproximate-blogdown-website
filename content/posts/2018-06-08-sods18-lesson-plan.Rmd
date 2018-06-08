@@ -1,0 +1,18 @@
+---
+title: '#SoDS18 Lesson Plan'
+author: Brian Richards
+date: '2018-06-08'
+slug: sods18-lesson-plan
+categories:
+  - Data Science
+  - R
+  - Machine Learning
+tags:
+  - Data Science
+  - Machine Learning
+  - R
+comments: no
+share: no
+draft: no
+---
+
