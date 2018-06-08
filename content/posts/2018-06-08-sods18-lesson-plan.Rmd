@@ -16,3 +16,14 @@ share: no
 draft: no
 ---
 
+The goal of week 2 of #SoDS18 is to narrow down all of the plans made during 
+the brainstorming sessions from week 1 and plan out how to accomplish those 
+goals. I've decided to narrow it down to three main goals to be completed 
+over the 3 months of #SoDS18. These goals are:
+
+1. Build an R Shiny app/dashboard
+2. Complete a machine learning competition (and implement multiple models)
+3. Learn about deep learning and implement a deep learning model
+
+## R Shiny 
+
